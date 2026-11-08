@@ -1,473 +1,1401 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio - Muhammad Zaid Al Fatih | Web Developer & Creative Designer">
-    <title>Muhammad Zaid Al Fatih - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Three.js for WebGL 3D Effects -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- GSAP for Advanced Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <!-- EmailJS for Contact Form -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <style>
-        /* Loading Animation */
-        .page-loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0a0a0f;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Zaid Alfatih | Portofolio & Bukti Proyek</title>
+  <meta name="description" content="Portofolio Resmi Muhammad Zaid Alfatih - Lulusan D3 Sistem Informasi Universitas Telkom (IPK 3.30). Berpengalaman di Tableau, SQL, Python, Laravel 12 (Midtrans & Groq API), dan IoT." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
         }
-        .page-loader.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-        .loader-spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(168, 85, 247, 0.3);
-            border-top-color: #a855f7;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-    </style>
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <!-- Page Loader -->
-    <div class="page-loader hidden" id="pageLoader" style="display: none !important;">
-        <div class="loader-spinner"></div>
+<body class="bg-slate-50 text-slate-900 min-h-screen relative selection:bg-blue-600 selection:text-white">
+
+  <!-- Top Scroll Progress Bar -->
+  <div id="scrollProgressBar"></div>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 text-white transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Brand & Mini Avatar -->
+      <a href="#cover" class="flex items-center gap-3 group">
+        <div class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border-2 border-blue-500/80 p-0.5 bg-slate-800">
+          <img src="profil.png" alt="Muhammad Zaid Alfatih" class="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-300" />
+        </div>
+        <div>
+          <span class="font-bold text-base sm:text-lg tracking-tight block group-hover:text-blue-400 transition-colors">
+            Muhammad Zaid Alfatih
+          </span>
+          <span class="text-[11px] text-slate-400 font-mono flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block pulse-badge"></span>
+            Junior Data Analyst & Web Dev
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1 text-sm font-semibold text-slate-300">
+        <a href="#about" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800 transition-colors">Tentang</a>
+        <a href="#skills" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800 transition-colors">Keahlian</a>
+        <a href="#projects" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800 transition-colors">Proyek & Bukti</a>
+        <a href="#credentials" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800 transition-colors">Dokumen Resmi</a>
+        <a href="#experience" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800 transition-colors">Pengalaman</a>
+        <a href="#contact" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800 transition-colors">Kontak</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="assets/docs/CV_Muhammad_Zaid_Alfatih.pdf" target="_blank" download="CV_Muhammad_Zaid_Alfatih.pdf" class="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-slate-600 transition-all shadow-sm">
+          <i data-lucide="download" class="w-4 h-4 text-blue-400"></i>
+          <span>Unduh CV (PDF)</span>
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/30 transition-all">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          <span>Hubungi</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" class="lg:hidden p-2 text-slate-300 hover:text-white rounded-lg focus:outline-none" aria-label="Buka Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
     </div>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <span class="brand-text">alfth
-                    
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden border-b border-slate-800 bg-slate-900 px-4 pt-3 pb-6 space-y-2 text-sm font-semibold text-slate-300 shadow-xl">
+      <a href="#about" class="block px-3 py-2 rounded-md hover:bg-slate-800 hover:text-white">Tentang</a>
+      <a href="#skills" class="block px-3 py-2 rounded-md hover:bg-slate-800 hover:text-white">Keahlian</a>
+      <a href="#projects" class="block px-3 py-2 rounded-md hover:bg-slate-800 hover:text-white">Proyek & Bukti</a>
+      <a href="#credentials" class="block px-3 py-2 rounded-md hover:bg-slate-800 hover:text-white">Dokumen Resmi</a>
+      <a href="#experience" class="block px-3 py-2 rounded-md hover:bg-slate-800 hover:text-white">Pengalaman</a>
+      <a href="#contact" class="block px-3 py-2 rounded-md hover:bg-slate-800 hover:text-white">Kontak</a>
+      <div class="pt-3 border-t border-slate-800 flex flex-col gap-2">
+        <a href="assets/docs/CV_Muhammad_Zaid_Alfatih.pdf" download="CV_Muhammad_Zaid_Alfatih.pdf" class="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-slate-800 text-white text-xs font-semibold border border-slate-700">
+          <i data-lucide="download" class="w-4 h-4 text-blue-400"></i> Unduh CV (PDF)
+        </a>
+        <a href="https://wa.me/6285121367274" target="_blank" class="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-emerald-600 text-white text-xs font-semibold">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Langsung
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 1. COVER / HERO SECTION ==================== -->
+  <section id="cover" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 text-white border-b border-slate-800">
+    <!-- Ambient Glow Orbs -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-10 right-10 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 left-10 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Status Pill -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-xs font-medium text-slate-300 shadow-sm backdrop-blur-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-badge"></span>
+            <span>Lulusan D3 Sistem Informasi · Telkom University</span>
+            <span class="text-slate-500">|</span>
+            <span class="text-blue-400 font-semibold">IPK 3.30/4.00</span>
+          </div>
+
+          <!-- Main Title -->
+          <div class="space-y-2">
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+              Muhammad Zaid <br />
+              <span class="gradient-hero-text">Al Fatih</span>
+            </h1>
+            <p class="text-base sm:text-xl font-medium text-blue-300/90 font-mono">
+              Junior Data Analyst & Full-Stack Web Developer
+            </p>
+          </div>
+
+          <!-- Bio Description -->
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Lulusan <strong>D3 Sistem Informasi Telkom University</strong> dengan keahlian terpadu dalam <strong>Analisis Data (Tableau, SQL, Python)</strong> dan <strong>Pengembangan Web Full-Stack (Laravel 12, REST API, Tailwind)</strong>. Berpengalaman sebagai Asisten Praktikum Visualisasi Data membimbing 100+ mahasiswa di <em>Tableau Cloud</em>, mengintegrasikan sistem pembayaran <em>Midtrans Snap</em>, menerapkan AI <em>Groq (Llama 3.3)</em>, serta memegang <strong>Sertifikat Hak Cipta Resmi (HAKI)</strong> atas perangkat lunak RefreshOil.
+          </p>
+
+          <!-- Metrics Badges Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-left">
+            <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/70 backdrop-blur-sm">
+              <div class="text-lg font-bold text-white font-mono">3.30 <span class="text-xs text-slate-400">/ 4.00</span></div>
+              <div class="text-[11px] text-slate-400 font-medium">IPK Kelulusan</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/70 backdrop-blur-sm">
+              <div class="text-lg font-bold text-emerald-400 font-mono">HAKI</div>
+              <div class="text-[11px] text-slate-400 font-medium">Hak Cipta Resmi</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/70 backdrop-blur-sm">
+              <div class="text-lg font-bold text-blue-400 font-mono">100+</div>
+              <div class="text-[11px] text-slate-400 font-medium">Mahasiswa VisDat</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/70 backdrop-blur-sm">
+              <div class="text-lg font-bold text-indigo-400 font-mono">100%</div>
+              <div class="text-[11px] text-slate-400 font-medium">Uji Otomatis Lolos</div>
+            </div>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+            <a href="#projects" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/30 transition-all">
+              <i data-lucide="layers" class="w-4 h-4"></i>
+              <span>Lihat Bukti Proyek</span>
+            </a>
+            <a href="assets/docs/CV_Muhammad_Zaid_Alfatih.pdf" download="CV_Muhammad_Zaid_Alfatih.pdf" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold text-sm transition-all">
+              <i data-lucide="file-text" class="w-4 h-4 text-blue-400"></i>
+              <span>Unduh CV Resmi (PDF)</span>
+            </a>
+            <a href="https://wa.me/6285121367274?text=Halo%20Zaid,%20saya%20tertarik%20dengan%20portofolio%20Anda" target="_blank" class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-emerald-600/90 hover:bg-emerald-600 text-white font-semibold text-sm transition-all shadow-md shadow-emerald-600/20">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Contact Badges / Socials -->
+          <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs text-slate-300 font-medium">
+            <a href="mailto:fatihmuhammadzaid406@gmail.com" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 border border-slate-700 transition-colors">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-blue-400"></i>
+              <span>fatihmuhammadzaid406@gmail.com</span>
+            </a>
+            <a href="https://github.com/alllfatihh" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 border border-slate-700 transition-colors">
+              <i data-lucide="github" class="w-3.5 h-3.5 text-slate-300"></i>
+              <span>GitHub</span>
+            </a>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700 text-slate-400">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-400"></i>
+              <span>Depok / Bandung (Bersedia Relokasi)</span>
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Right Visual: Profile Photo & Card Showcase -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-sm">
+            
+            <!-- Glow background -->
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 rounded-3xl blur-xl opacity-30 group-hover:opacity-60 transition duration-1000"></div>
+
+            <!-- Profile Image Container -->
+            <div class="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-700 shadow-2xl p-2.5">
+              <div class="rounded-xl overflow-hidden aspect-[4/5] bg-slate-800 relative">
+                <img src="profil.png" alt="Muhammad Zaid Alfatih" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" />
+                
+                <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent">
+                  <div class="text-white font-bold text-base">Muhammad Zaid Alfatih</div>
+                  <div class="text-xs text-blue-300 font-mono">D3 Sistem Informasi · Telkom University</div>
+                  <div class="mt-2 flex items-center justify-between text-[11px] text-slate-300 pt-2 border-t border-slate-800">
+                    <span class="flex items-center gap-1 text-emerald-400 font-semibold">
+                      <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Profil Terverifikasi
+                    </span>
+                    <span class="text-slate-400">Angkatan 2023 - 2026</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Verification Pill -->
+            <div class="absolute -bottom-4 -left-4 bg-white/95 text-slate-900 px-4 py-2.5 rounded-xl border border-slate-200 shadow-xl backdrop-blur-md hidden sm:flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600">
+                <i data-lucide="award" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs font-bold leading-tight">Pemegang Hak Cipta</div>
+                <div class="text-[10px] text-slate-500 font-medium">Sertifikat Resmi HAKI 2025</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 2. ABOUT & COMPETENCY PILLARS ==================== -->
+  <section id="about" class="py-16 md:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold text-blue-700 uppercase tracking-wider">
+          <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
+          Profil Profesional
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Menjembatani Analisis Data & Eksekusi Rekayasa Web
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+          Saya tidak hanya menganalisis angka untuk menghasilkan insight bisnis melalui visualisasi data dan BI, namun juga mampu merancang, membangun, serta mengintegrasikan aplikasi web modern yang aman dan teruji.
+        </p>
+      </div>
+
+      <!-- 4 Pillars Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        
+        <!-- Pillar 1 -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600">
+              <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base">Data & BI Analytics</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Mengelola Tableau Cloud, merancang dashboard interaktif (parkir, KTM, kelulusan), serta melakukan pemodelan data dengan SQL dan Python.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
+            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Tableau Cloud</span>
+            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">SQL / MySQL</span>
+            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Python</span>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600">
+              <i data-lucide="code-2" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base">Full-Stack Laravel</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Membangun aplikasi web skala produksi dengan Laravel 12, integrasi payment gateway Midtrans Snap, API ekspedisi kurir Biteship, dan RBAC.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
+            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Laravel 12</span>
+            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Midtrans</span>
+            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Tailwind</span>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600">
+              <i data-lucide="sparkles" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base">Integrasi AI & Otomasi</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Mengintegrasikan Large Language Model melalui Groq API (Llama 3.3) untuk pembuatan bank soal otomatis dan sistem evaluasi ujian dinamis.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
+            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Groq API</span>
+            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Llama 3.3</span>
+            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Prompt Eng</span>
+          </div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="glass-card p-6 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base">IoT & OCR Sensing</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Merancang prototipe pengambilan citra layar treadmill menggunakan ESP32-CAM, pemrosesan EasyOCR, dan visualisasi web real-time.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
+            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">ESP32-CAM</span>
+            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">EasyOCR</span>
+            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">IoT Dashboard</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 3. TECHNICAL SKILLS ==================== -->
+  <section id="skills" class="py-16 md:py-24 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-xs font-bold text-indigo-700 uppercase tracking-wider">
+          <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+          Daftar Keterampilan Teknis
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Tools, Bahasa & Metodologi
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600">
+          Keterampilan yang telah diaplikasikan secara nyata dalam proyek komersial, riset magang, dan asistensi perkuliahan.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        
+        <!-- Skill Group 1: Data & BI -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
+            <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+              <i data-lucide="pie-chart" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Data & BI</h4>
+              <p class="text-[11px] text-slate-500">Analisis & Visualisasi</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">Tableau Desktop</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">Tableau Cloud</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">SQL (MySQL)</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">Python (Pandas)</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">Microsoft Excel</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">Data Modeling</span>
+          </div>
+        </div>
+
+        <!-- Skill Group 2: Web & Backend -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
+            <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">
+              <i data-lucide="server" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Web & Backend</h4>
+              <p class="text-[11px] text-slate-500">Framework & Integrasi</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">PHP</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">Laravel 12</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">Midtrans Snap</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">Biteship API</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">Tailwind CSS</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">JavaScript</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">RESTful API</span>
+          </div>
+        </div>
+
+        <!-- Skill Group 3: AI & Hardware -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
+            <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center font-bold">
+              <i data-lucide="bot" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">AI & Embedded</h4>
+              <p class="text-[11px] text-slate-500">LLM & Sensorik</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">Groq API</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">Llama 3.3</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">ESP32-CAM</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">EasyOCR</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">Arduino IDE</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">Computer Vision</span>
+          </div>
+        </div>
+
+        <!-- Skill Group 4: Tools & Architecture -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
+            <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
+              <i data-lucide="git-branch" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Arsitektur & Tools</h4>
+              <p class="text-[11px] text-slate-500">Dokumentasi & Uji</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">Git & GitHub</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">UML (23 Diagram)</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">BPMN & ERD</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">draw.io</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">PHPUnit</span>
+            <span class="tech-pill px-2.5 py-1 rounded text-xs">Figma UI/UX</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4. CASE STUDIES & REAL EVIDENCE (ALA FADHIL) ==================== -->
+  <section id="projects" class="py-16 md:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold text-blue-700 uppercase tracking-wider">
+          <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+          Portofolio Nyata & Bukti Sistem
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Studi Kasus Proyek & Dokumentasi Asli
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+          Setiap proyek dilengkapi latar belakang masalah, kontribusi teknis, hasil terverifikasi, dan <strong>screenshot antarmuka nyata</strong>. Klik gambar mana saja untuk memperbesar.
+        </p>
+      </div>
+
+      <!-- ==================== PROJECT 1: NOTISSE ==================== -->
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-lg mb-16">
+        
+        <!-- Project Top Bar -->
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-slate-100">
+          <div class="flex items-center gap-2">
+            <span class="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold flex items-center gap-1.5">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+              Terverifikasi Midtrans Snap · Biteship API
+            </span>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
+              2026
+            </span>
+          </div>
+          <div class="text-xs font-mono text-slate-500">
+            Ref: NTS/SOP-PAY/2026/01
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
+          
+          <!-- Left: Problem, Contribution, Metrics -->
+          <div class="lg:col-span-6 space-y-6">
+            <div>
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+                Notisse Atelier — E-Commerce Fashion & Exclusive Art Platform
+              </h3>
+              <p class="text-xs sm:text-sm text-blue-600 font-semibold mt-1">
+                Platform retail dan galeri seni dengan pembayaran multi-channel otomatis & ekspedisi kurir real-time.
+              </p>
+            </div>
+
+            <!-- Problem Background -->
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
+                <i data-lucide="alert-circle" class="w-4 h-4 text-amber-500"></i>
+                Latar Belakang Masalah
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Toko busana dan karya seni eksklusif membutuhkan sistem transaksi tanpa konfirmasi manual WhatsApp. Tantangan utamanya adalah sinkronisasi status pembayaran gateway pihak ketiga secara instan, kalkulasi ongkos kirim presisi antar-kota di Indonesia, serta pemisahan modul retail dari penawaran seni satu-satunya (one-of-a-kind).
+              </p>
+            </div>
+
+            <!-- Key Contributions -->
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i>
+                Kontribusi & Solusi Arsitektur
+              </h4>
+              <ul class="text-xs sm:text-sm text-slate-600 space-y-1.5 list-disc list-inside">
+                <li>Mengembangkan arsitektur backend berbasis <strong>Laravel 12</strong> & MySQL dengan isolasi skema riwayat pesanan.</li>
+                <li>Mengintegrasikan <strong>Midtrans Snap</strong> (QRIS, Virtual Account Bank BCA/Mandiri/BRI/BNI, GoPay) dengan validasi callback server otomatis.</li>
+                <li>Mengintegrasikan <strong>Biteship API</strong> untuk deteksi otomatis tarif ekspedisi berdasarkan kecamatan tujuan pembeli.</li>
+                <li>Membangun cart drawer interaktif, modal panduan ukuran, dan panel dasbor admin pesanan, diskon & staff.</li>
+                <li>Menerapkan rangkaian <strong>pengujian otomatis (Automated Unit Testing)</strong> dengan PHPUnit.</li>
+              </ul>
+            </div>
+
+            <!-- Results & Verified Proof -->
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
+                <i data-lucide="trophy" class="w-4 h-4 text-amber-500"></i>
+                Hasil & Bukti Terverifikasi
+              </h4>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 space-y-2">
+                <p>
+                  ✓ Lolos verifikasi merchant gateway resmi dengan dokumen SOP Alur Pemesanan & Pembayaran End-to-End.
+                </p>
+                <p class="text-emerald-800 font-semibold">
+                  ★ Seluruh skenario pengujian checkout, stok berkurang, dan callback pembayaran lolos 100% pada eksekusi PHPUnit test suite.
+                </p>
+              </div>
+            </div>
+
+            <!-- Tech Stack Pills -->
+            <div class="pt-2 flex flex-wrap gap-1.5">
+              <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-indigo-700">Laravel 12</span>
+              <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-emerald-700">Midtrans Snap</span>
+              <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-sky-700">Biteship API</span>
+              <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-amber-700">MySQL</span>
+              <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-blue-700">Tailwind CSS</span>
+              <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-purple-700">PHPUnit</span>
+            </div>
+
+            <!-- Action Link: SOP PDF -->
+            <div class="pt-2 flex flex-wrap gap-3">
+              <a href="assets/docs/FLOW_TRANSAKSI_NOTISSE_MIDTRANS.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-sm transition-all">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+                <span>Buka Dokumen SOP Midtrans (PDF)</span>
+              </a>
+              <a href="https://github.com/alllfatihh/e-commerce" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold border border-slate-200 transition-all">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>Repository GitHub</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Right: Real Screenshot Gallery -->
+          <div class="lg:col-span-6 space-y-4">
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+              <div class="flex items-center justify-between text-xs font-semibold text-slate-700 pb-2 border-b border-slate-200">
+                <span class="flex items-center gap-1.5 text-blue-700 font-bold">
+                  <i data-lucide="camera" class="w-4 h-4"></i> Dokumentasi Nyata Sistem Notisse
                 </span>
+                <span class="text-blue-600 font-medium text-[11px]">Klik gambar untuk memperbesar</span>
+              </div>
+
+              <!-- Featured Screenshot: Storefront -->
+              <div class="proof-thumbnail aspect-video shadow-sm" onclick="openModal('assets/projects/notisse/03_storefront_catalog.png', 'Notisse Storefront Catalog', 'Katalog etalase produk fashion & karya seni dengan filter kategori, harga real-time, dan status ketersediaan stok.', 'E-Commerce Storefront')">
+                <img src="assets/projects/notisse/03_storefront_catalog.png" alt="Katalog Notisse" class="w-full h-full object-cover" />
+                <div class="zoom-overlay">
+                  <i data-lucide="zoom-in" class="w-5 h-5"></i> Perbesar Katalog Etalase
+                </div>
+              </div>
+
+              <!-- 4 Sub Thumbnails Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                
+                <!-- Thumb 1: Cart Drawer -->
+                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/notisse/05_cart_drawer.png', 'Cart Drawer & Ringkasan Subtotal', 'Keranjang belanja samping interaktif yang menghitung subtotal belanja secara dinamis tanpa reload halaman.', 'Cart System')">
+                  <img src="assets/projects/notisse/05_cart_drawer.png" alt="Cart Drawer" class="w-full h-full object-cover" />
+                  <div class="zoom-overlay text-[10px]">
+                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Keranjang
+                  </div>
+                </div>
+
+                <!-- Thumb 2: Checkout Address -->
+                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/notisse/06_checkout_page.png', 'Halaman Checkout & Ekspedisi Biteship', 'Formulir pengiriman alamat pembeli dengan integrasi tarif kurir ekspedisi (JNE, Sicepat, J&T) via API Biteship.', 'Checkout & Shipping')">
+                  <img src="assets/projects/notisse/06_checkout_page.png" alt="Checkout Page" class="w-full h-full object-cover" />
+                  <div class="zoom-overlay text-[10px]">
+                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Checkout
+                  </div>
+                </div>
+
+                <!-- Thumb 3: Midtrans Payment Modal -->
+                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/notisse/flow_p3_X61.png', 'Pop-up Pembayaran Midtrans Snap', 'Integrasi gateway resmi Midtrans Snap mendukung pembayaran QRIS, Virtual Account seluruh bank, dan e-Wallet dengan callback otomatis.', 'Payment Gateway')">
+                  <img src="assets/projects/notisse/flow_p3_X61.png" alt="Midtrans Snap Modal" class="w-full h-full object-cover" />
+                  <div class="zoom-overlay text-[10px]">
+                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Midtrans
+                  </div>
+                </div>
+
+                <!-- Thumb 4: PHPUnit Test -->
+                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/notisse/12_phpunit_test_execution.png', 'Bukti Pengujian Otomatis PHPUnit', 'Seluruh unit test dan feature test (stok, order, callback verifikasi) dieksekusi dengan status 100% Passed tanpa kegagalan.', 'Automated Testing')">
+                  <img src="assets/projects/notisse/12_phpunit_test_execution.png" alt="PHPUnit Test Proof" class="w-full h-full object-cover" />
+                  <div class="zoom-overlay text-[10px]">
+                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Uji PHPUnit
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Admin Dashboard Additional Proof Banner -->
+              <div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-between text-xs cursor-pointer hover:border-blue-400 transition-all" onclick="openModal('assets/projects/notisse/09_admin_dashboard.png', 'Dasbor Analitik Penjualan Admin', 'Panel kontrol admin menyajikan metrik omzet penjualan, grafik tren pesanan harian, status inventaris produk, dan manajemen hak akses staf.', 'Admin Analytics')">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="layout-dashboard" class="w-4 h-4 text-blue-600"></i>
+                  <span class="font-semibold text-slate-800">Lihat Dashboard Analitik & Manajemen Admin</span>
+                </div>
+                <span class="text-blue-600 font-bold flex items-center gap-1">
+                  Buka <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home" data-text="Home">Home</a></li>
-                <li><a href="#about" data-text="About">About</a></li>
-                <li><a href="#projects" data-text="Project">Project</a></li>
-                <li><a href="#services" data-text="Services">Services</a></li>
-                <li><a href="#" class="nav-download-btn" id="downloadCV" data-text="Download CV">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                    <span>Download CV</span>
-                </a></li>
-                <li><a href="#contact" class="nav-contact-btn" data-text="Contact Me">Contact Me</a></li>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ==================== PROJECT 2: AI LMS MATHEMATICS ==================== -->
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-lg mb-16">
+        
+        <!-- Project Top Bar -->
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-slate-100">
+          <div class="flex items-center gap-2">
+            <span class="px-3 py-1 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-xs font-bold flex items-center gap-1.5">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+              Program Magang Berdampak · KK CITI · Groq API (Llama 3.3)
+            </span>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
+              Feb - Jul 2026
+            </span>
+          </div>
+          <div class="text-xs font-mono text-slate-500">
+            Telkom University
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
+          
+          <!-- Left: Problem, Contribution, Metrics -->
+          <div class="lg:col-span-6 space-y-6">
+            <div>
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+                Platform Soal Latihan Dinamis Matematika SMP Berbasis AI
+              </h3>
+              <p class="text-xs sm:text-sm text-purple-600 font-semibold mt-1">
+                Generasi variasi soal otomatis dengan AI Groq (Llama 3.3), evaluasi jawaban desimal akurat & audit ujian.
+              </p>
+            </div>
+
+            <!-- Problem Background -->
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
+                <i data-lucide="alert-circle" class="w-4 h-4 text-amber-500"></i>
+                Latar Belakang Masalah
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Bank soal latihan matematika konvensional bersifat statis sehingga siswa mudah menghafal jawaban daripada memahami konsep. Selain itu, para guru di sekolah memerlukan waktu yang sangat lama untuk menyusun puluhan variasi soal beserta langkah penyelesaian dan kunci jawaban secara manual.
+              </p>
+            </div>
+
+            <!-- Key Contributions -->
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i>
+                Kontribusi & Solusi Arsitektur
+              </h4>
+              <ul class="text-xs sm:text-sm text-slate-600 space-y-1.5 list-disc list-inside">
+                <li>Mengembangkan platform web terintegrasi menggunakan <strong>Laravel & Groq API (Llama 3.3)</strong> untuk pembuatan soal dinamis dalam hitungan detik.</li>
+                <li>Merancang sistem <strong>Role-Based Access Control (RBAC)</strong> komprehensif memisahkan hak akses antarmuka Guru dan Siswa.</li>
+                <li>Menerapkan algoritma mesin evaluasi ujian otomatis dengan toleransi desimal menggunakan <code>bccomp()</code> dan normalisasi parsing ekspresi matematika.</li>
+                <li>Membuat fitur <strong>Audit Ujian Siswa</strong> yang memetakan waktu pengerjaan per soal, tingkat kesulitan, dan riwayat analisis kesalahan.</li>
+                <li>Menyusun dokumentasi arsitektur sistem lengkap dengan <strong>23 diagram UML</strong> (Use Case, Activity, Sequence, BPMN, ERD, Class Diagram).</li>
+              </ul>
+            </div>
+
+            <!-- Results & Verified Proof -->
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
+                <i data-lucide="trophy" class="w-4 h-4 text-amber-500"></i>
+                Hasil & Bukti Terverifikasi
+              </h4>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 space-y-2">
+                <p>
+                  ✓ 10 dari 10 skenario pengujian integrasi AI Groq berhasil 100% tanpa malformasi format soal (JSON parser valid).
+                </p>
+                <p class="text-purple-800 font-semibold">
+                  ★ Diuji melalui 12 skenario pengujian RBAC dengan tingkat keberhasilan 100%, terdokumentasi resmi di Laporan Magang Berdampak KK CITI Telkom University.
+                </p>
+              </div>
+            </div>
+
+            <!-- Tech Stack Pills -->
+            <div class="pt-2 flex flex-wrap gap-1.5">
+              <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-purple-700">Groq API</span>
+              <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-indigo-700">Llama 3.3</span>
+              <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-blue-700">Laravel</span>
+              <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-emerald-700">MySQL</span>
+              <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-amber-700">Tailwind CSS</span>
+              <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-slate-700">23 Diagram UML</span>
+            </div>
+
+            <!-- Action Link: LMS GitHub -->
+            <div class="pt-2 flex flex-wrap gap-3">
+              <a href="https://github.com/alllfatihh/LMS" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold shadow-sm transition-all">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>Repository GitHub LMS</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Right: Real Screenshot Gallery -->
+          <div class="lg:col-span-6 space-y-4">
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+              <div class="flex items-center justify-between text-xs font-semibold text-slate-700 pb-2 border-b border-slate-200">
+                <span class="flex items-center gap-1.5 text-purple-700 font-bold">
+                  <i data-lucide="camera" class="w-4 h-4"></i> Dokumentasi Nyata Platform AI LMS
+                </span>
+                <span class="text-purple-600 font-medium text-[11px]">Klik gambar untuk memperbesar</span>
+              </div>
+
+              <!-- Featured Screenshot: Landing Page -->
+              <div class="proof-thumbnail aspect-video shadow-sm" onclick="openModal('assets/projects/lms/01_Landing_Page.png', 'Landing Page Platform AI Matematika SMP', 'Halaman beranda platform latihan soal dinamis menyajikan kurikulum Matematika SMP, registrasi akun, dan akses kelas.', 'Landing Page LMS')">
+                <img src="assets/projects/lms/01_Landing_Page.png" alt="LMS Landing Page" class="w-full h-full object-cover" />
+                <div class="zoom-overlay">
+                  <i data-lucide="zoom-in" class="w-5 h-5"></i> Perbesar Halaman Beranda
+                </div>
+              </div>
+
+              <!-- 4 Sub Thumbnails Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                
+                <!-- Thumb 1: Dashboard Guru -->
+                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/lms/04_Guru_Dashboard.png', 'Dashboard Guru & Manajemen Kelas', 'Panel utama guru untuk mengelola daftar kelas, silabus materi BAB, jumlah siswa aktif, dan rekapitulasi ujian.', 'Dashboard Guru')">
+                  <img src="assets/projects/lms/04_Guru_Dashboard.png" alt="Dashboard Guru" class="w-full h-full object-cover" />
+                  <div class="zoom-overlay text-[10px]">
+                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Guru Dashboard
+                  </div>
+                </div>
+
+                <!-- Thumb 2: Pembuatan Soal AI -->
+                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/lms/13_Guru_Buat_Soal.png', 'Generator Pembuatan Soal AI Groq', 'Formulir cerdas bagi guru untuk menginstruksikan LLM Llama 3.3 menghasilkan ragam soal latihan matematika baru secara instan.', 'AI Question Generator')">
+                  <img src="assets/projects/lms/13_Guru_Buat_Soal.png" alt="AI Generator Soal" class="w-full h-full object-cover" />
+                  <div class="zoom-overlay text-[10px]">
+                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Generator AI
+                  </div>
+                </div>
+
+                <!-- Thumb 3: Audit Ujian -->
+                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/lms/15_Guru_Audit_Ujian.png', 'Audit Ujian & Evaluasi Siswa', 'Tabel evaluasi dan analisis mendalam mengenai performa setiap siswa dalam menyelesaikan kuis matematika.', 'Exam Audit')">
+                  <img src="assets/projects/lms/15_Guru_Audit_Ujian.png" alt="Audit Ujian" class="w-full h-full object-cover" />
+                  <div class="zoom-overlay text-[10px]">
+                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Audit Ujian
+                  </div>
+                </div>
+
+                <!-- Thumb 4: Sequence Diagram Evaluasi -->
+                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/magang/p23_Im7.png', 'Sequence Diagram Evaluasi Mesin AI', 'Pemodelan arsitektur sequence diagram alur logika mesin evaluasi ujian otomatis yang menghubungkan Controller, Service, dan AI Engine.', 'Software Architecture')">
+                  <img src="assets/projects/magang/p23_Im7.png" alt="Sequence Diagram" class="w-full h-full object-cover" />
+                  <div class="zoom-overlay text-[10px]">
+                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Diagram UML
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Student Exam Interface Banner -->
+              <div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-between text-xs cursor-pointer hover:border-purple-400 transition-all" onclick="openModal('assets/projects/lms/20_Siswa_Ujian.png', 'Lembar Kerja Ujian Interaktif Siswa', 'Antarmuka pengerjaan kuis matematika dinamis bagi siswa dengan timer interaktif, penomoran soal otomatis, dan navigasi ramah pengguna.', 'Student Quiz UI')">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="clipboard-check" class="w-4 h-4 text-purple-600"></i>
+                  <span class="font-semibold text-slate-800">Lihat Antarmuka Pengerjaan Kuis Interaktif Siswa</span>
+                </div>
+                <span class="text-purple-600 font-bold flex items-center gap-1">
+                  Buka <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ==================== PROJECT 3: REFRESH OIL ==================== -->
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-lg mb-16">
+        
+        <!-- Project Top Bar -->
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-slate-100">
+          <div class="flex items-center gap-2">
+            <span class="px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-bold flex items-center gap-1.5">
+              <i data-lucide="award" class="w-3.5 h-3.5"></i>
+              Sertifikat Hak Cipta Resmi (HAKI) · Kementerian Hukum & HAM
+            </span>
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
+              2025
+            </span>
+          </div>
+          <div class="text-xs font-mono text-slate-500">
+            Perangkat Lunak Terdaftar
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
+          
+          <!-- Left: Problem, Contribution, Metrics -->
+          <div class="lg:col-span-6 space-y-6">
+            <div>
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+                RefreshOil — Web Distribusi & Penjemputan Minyak Jelantah
+              </h3>
+              <p class="text-xs sm:text-sm text-amber-600 font-semibold mt-1">
+                Aplikasi digital pengelolaan limbah jelantah rumah tangga & UMKM menjadi sumber daya bernilai ekonomi.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
+                <i data-lucide="alert-circle" class="w-4 h-4 text-amber-500"></i>
+                Latar Belakang Masalah
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Pembuangan minyak jelantah sisa dapur secara sembarangan menimbulkan pencemaran saluran air tanah dan lingkungan hidup. Di sisi lain, masyarakat kesulitan menemukan pengepul resmi yang bersedia menjemput dan membeli jelantah secara transparan dan terjadwal.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i>
+                Kontribusi & Solusi Arsitektur
+              </h4>
+              <ul class="text-xs sm:text-sm text-slate-600 space-y-1.5 list-disc list-inside">
+                <li>Merancang sistem web interaktif berbasis <strong>Laravel & MySQL</strong> dengan alur penjemputan terotomatisasi.</li>
+                <li>Menyediakan fitur pendataan volume jelantah, penjadwalan armada penjemputan, dan kalkulator konversi reward voucher.</li>
+                <li>Membangun modul transparansi transaksi dan edukasi dampak lingkungan hidup bagi masyarakat umum dan mitra bisnis.</li>
+              </ul>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="font-bold text-slate-900 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
+                <i data-lucide="trophy" class="w-4 h-4 text-amber-500"></i>
+                Hasil & Bukti Sah
+              </h4>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 space-y-2">
+                <p class="text-amber-900 font-semibold">
+                  ★ Dianugerahi <strong>Sertifikat Hak Kekayaan Intelektual (HAKI)</strong> resmi untuk karya cipta Perangkat Lunak dari Direktorat Jenderal Kekayaan Intelektual (DJKI) Kemenkumham RI.
+                </p>
+              </div>
+            </div>
+
+            <div class="pt-2 flex flex-wrap gap-1.5">
+              <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-amber-700">Laravel</span>
+              <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-blue-700">MySQL</span>
+              <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-emerald-700">JavaScript</span>
+              <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-indigo-700">HAKI Kemenkumham</span>
+            </div>
+
+            <!-- Action Link: RefreshOil GitHub -->
+            <div class="pt-2 flex flex-wrap gap-3">
+              <a href="https://github.com/alllfatihh/refreshoil" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-semibold shadow-sm transition-all">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>Repository GitHub RefreshOil</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Right: Visual Gallery -->
+          <div class="lg:col-span-6 space-y-4">
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+              <div class="flex items-center justify-between text-xs font-semibold text-slate-700 pb-2 border-b border-slate-200">
+                <span class="flex items-center gap-1.5 text-amber-700 font-bold">
+                  <i data-lucide="camera" class="w-4 h-4"></i> Dokumentasi Brand & Web RefreshOil
+                </span>
+                <span class="text-amber-600 font-medium text-[11px]">Klik untuk perbesar</span>
+              </div>
+
+              <!-- Main Banner -->
+              <div class="proof-thumbnail aspect-video shadow-sm" onclick="openModal('assets/projects/refreshoil/Banner2.png', 'Banner Resmi Platform RefreshOil', 'Visualisasi identitas kampanye pelestarian lingkungan dan digitalisasi daur ulang minyak jelantah melalui RefreshOil.', 'Eco-Tech Branding')">
+                <img src="assets/projects/refreshoil/Banner2.png" alt="Banner RefreshOil" class="w-full h-full object-cover" />
+                <div class="zoom-overlay">
+                  <i data-lucide="zoom-in" class="w-5 h-5"></i> Perbesar Banner Proyek
+                </div>
+              </div>
+
+              <!-- Sub thumbnails -->
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/refreshoil/jlantah.png', 'Alur Distribusi Jelantah', 'Infografis skema penjemputan dan pengolahan minyak jelantah dari rumah tangga hingga pengepul terdaftar.', 'Process Flow')">
+                  <img src="assets/projects/refreshoil/jlantah.png" alt="Alur Jelantah" class="w-full h-full object-cover" />
+                  <div class="zoom-overlay text-[10px]">
+                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Alur Penjemputan
+                  </div>
+                </div>
+
+                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/refreshoil/logo.png', 'Logo Resmi RefreshOil', 'Desain logo identitas resmi RefreshOil yang didaftarkan pada sertifikat Hak Kekayaan Intelektual.', 'Brand Mark')">
+                  <img src="assets/projects/refreshoil/logo.png" alt="Logo RefreshOil" class="w-full h-full object-contain p-2 bg-white" />
+                  <div class="zoom-overlay text-[10px]">
+                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Logo Brand
+                  </div>
+                </div>
+
+                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/refreshoil/677cc8601f2d0_website.png', 'Antarmuka Web RefreshOil', 'Tampilan antarmuka beranda web interaktif untuk penjemputan dan pencatatan transaksi digital.', 'Web Portal')">
+                  <img src="assets/projects/refreshoil/677cc8601f2d0_website.png" alt="Web RefreshOil" class="w-full h-full object-cover" />
+                  <div class="zoom-overlay text-[10px]">
+                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Antarmuka Web
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ==================== PROJECT 4 & 5: VISDAT TABLEAU & TREADMILL IOT ==================== -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Project 4: VisDat Tableau -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-lg flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+              <span class="px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold flex items-center gap-1.5">
+                <i data-lucide="pie-chart" class="w-3.5 h-3.5"></i>
+                Tableau Cloud & Visualisasi Data
+              </span>
+              <span class="text-xs text-slate-500 font-mono">FIT Telkom University</span>
+            </div>
+
+            <h3 class="text-lg sm:text-xl font-bold text-slate-900">
+              Asistensi Praktikum & Tata Kelola Tableau Cloud
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Bertanggung jawab mengelola situs <strong>Tableau Cloud</strong> mata kuliah Visualisasi Data untuk akses pengguna, publikasi workbook analisis, dan koneksi sumber data. Membimbing <strong>100+ mahasiswa</strong> dalam merancang dashboard interaktif terkait:
+            </p>
+
+            <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
+              <li>Analisis utilisasi tempat parkir kampus berdasarkan sebaran waktu puncak.</li>
+              <li>Analisis tapping Kartu Tanda Mahasiswa (KTM) untuk akses berbagai fasilitas kampus.</li>
+              <li>Analisis prediksi ketepatan waktu kelulusan mahasiswa berdasarkan IP semester 1–3.</li>
             </ul>
-            <button class="nav-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
 
-    <!-- Floating Animated Shapes Background -->
-    <div class="floating-shapes">
-        <div class="floating-shape"></div>
-        <div class="floating-shape"></div>
-        <div class="floating-shape"></div>
-        <div class="floating-shape"></div>
-        <div class="rotating-orb"></div>
-        <div class="rotating-orb"></div>
+            <div class="p-3 bg-blue-50/70 border border-blue-200 rounded-xl text-xs text-blue-900">
+              ✓ Terverifikasi melalui dokumen resmi <strong>Berita Acara Praktikum (BAP)</strong> Fakultas Ilmu Terapan Telkom University.
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-slate-100 flex items-center justify-between">
+            <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-blue-700">Tableau Cloud · SQL</span>
+            <a href="assets/docs/BAP_Asprak_Visualisasi_Data.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors">
+              <span>Buka Dokumen BAP Resmi</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 5: Treadmill IoT & OCR -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-lg flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+              <span class="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold flex items-center gap-1.5">
+                <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+                IoT & Computer Vision
+              </span>
+              <span class="text-xs text-slate-500 font-mono">KK CITI 2026</span>
+            </div>
+
+            <h3 class="text-lg sm:text-xl font-bold text-slate-900">
+              Monitoring Data Layar Treadmill Berbasis IoT & EasyOCR
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Membangun prototipe pemantauan kebugaran tanpa perlu mengubah mikrokontroler internal alat olahraga:
+            </p>
+
+            <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
+              <li><strong>ESP32-CAM</strong> menangkap citra angka 7-segment / LCD pada layar panel treadmill secara berkala.</li>
+              <li>Pipeline <strong>EasyOCR</strong> berbasis Python memproses gambar, memfilter noise pencahayaan, dan mengekstrak nilai numerik (kecepatan, jarak, kalori).</li>
+              <li>Halaman web dashboard menyajikan data kecepatan dan jarak tempuh pengguna secara <em>real-time</em>.</li>
+              <li>Menyusun dokumentasi batas akurasi pembacaan pada intensitas cahaya ruangan berbeda.</li>
+            </ul>
+
+            <div class="p-3 bg-emerald-50/70 border border-emerald-200 rounded-xl text-xs text-emerald-900">
+              ✓ Prototipe fungsional dan pengujian empiris terdokumentasi dalam Laporan Akhir Riset KK CITI.
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-slate-100 flex items-center justify-between">
+            <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-emerald-700">ESP32-CAM · EasyOCR · Python</span>
+            <span class="text-xs font-bold text-slate-500">Riset Teruji</span>
+          </div>
+        </div>
+
+      </div>
+
     </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-background" id="particlesContainer">
-            <!-- WebGL Canvas for 3D Effects -->
-            <canvas id="webgl-canvas"></canvas>
-            <!-- Particles will be generated by JavaScript -->
-            <div class="hero-shapes">
-                <div class="shape-circle shape-1"></div>
-                <div class="shape-circle shape-2"></div>
-            </div>
+  <!-- ==================== 5. OFFICIAL CREDENTIALS & DOCUMENTS ==================== -->
+  <section id="credentials" class="py-16 md:py-24 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-700 uppercase tracking-wider">
+          <i data-lucide="file-check-2" class="w-3.5 h-3.5"></i>
+          Validasi & Bukti Legalitas
         </div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-left">
-                    <div class="hero-greeting">Hello </div>
-                    <h1 class="hero-title">
-                        I am <span class="highlight">Muhammad Zaid Al Fatih</span>
-                    </h1>
-                    <div class="hero-subtitle">Web Developer & Designer</div>
-                    <p class="hero-description">
-                        I'm a person who has a keen interest in web development and design. I think presenting an attractive design is a matter of concern in developing a branding of products. To create a good design, I focus on proper composition and visual decoration details in order to make it more professional. For the time being, I'm developing the skill for acquiring the UI/UX design for dynamic application and web development.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#about" class="btn btn-outline">
-                            <span>More</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-right">
-                    <div class="hero-image-wrapper">
-                        <div class="hero-image">
-                            <img src="profil.png" alt="Muhammad Zaid Al Fatih" class="profile-image">
-                        </div>
-                        <div class="find-me">
-                            <div class="find-me-label">Find Me On</div>
-                            <div class="social-links">
-                                <a href="https://github.com" target="_blank" class="social-link">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                    </svg>
-                                </a>
-                                <a href="https://instagram.com" target="_blank" class="social-link">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                    </svg>
-                                </a>
-                                <a href="https://linkedin.com" target="_blank" class="social-link">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Dokumen & Kredensial Resmi
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600">
+          Bukti keabsahan riwayat akademik, sertifikasi hak cipta, dan standar operasional sistem yang dapat Anda periksa langsung.
+        </p>
+      </div>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="section-divider"></div>
-        <div class="container">
-            <div class="section-header">
-                <div class="section-icon-wrapper">
-                    <svg class="section-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                </div>
-                <h2 class="section-title">Who am I?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Doc 1: CV Resmi -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center">
+              <i data-lucide="file-text" class="w-6 h-6"></i>
             </div>
-            <div class="about-stats">
-                <div class="stat-card">
-                    <div class="stat-number" data-target="5">0</div>
-                    <div class="stat-label">Projects</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" data-target="10">0</div>
-                    <div class="stat-label">Skills</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" data-target="3">0</div>
-                    <div class="stat-label">Years Learning</div>
-                </div>
+            <div>
+              <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block">Dokumen Pribadi</span>
+              <h4 class="font-bold text-slate-900 text-sm mt-0.5">Curriculum Vitae (CV) Resmi</h4>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="lead">
-                        A web developer and designer passionate about creating digital experiences.
-                    </p>
-                    <p>
-                        I specialize in building responsive, user-friendly websites and web applications. My approach combines clean code with thoughtful design, ensuring every project is both functional and visually appealing.
-                    </p>
-                    <p>
-                        I'm constantly learning and exploring new technologies. Whether it's front-end design, back-end development, or full-stack solutions, I'm always excited to take on new challenges.
-                    </p>
-                </div>
-            </div>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Format CV terstruktur dan komprehensif mencakup latar belakang akademik, riwayat proyek, keterampilan, dan kontak aktif.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100">
+            <a href="assets/docs/CV_Muhammad_Zaid_Alfatih.pdf" download="CV_Muhammad_Zaid_Alfatih.pdf" class="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-sm transition-all">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span>Unduh CV (PDF)</span>
+            </a>
+          </div>
         </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="section-divider"></div>
-        <div class="container">
-            <div class="section-header">
-                <div class="section-icon-wrapper">
-                    <svg class="section-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                        <line x1="8" y1="21" x2="16" y2="21"></line>
-                        <line x1="12" y1="17" x2="12" y2="21"></line>
-                    </svg>
-                </div>
-                <h2 class="section-title">Portfolio</h2>
+        <!-- Doc 2: BAP VisDat -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center">
+              <i data-lucide="award" class="w-6 h-6"></i>
             </div>
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Projects will be dynamically loaded here -->
+            <div>
+              <span class="text-[10px] font-bold text-indigo-600 uppercase tracking-wider block">Telkom University</span>
+              <h4 class="font-bold text-slate-900 text-sm mt-0.5">Berita Acara Praktikum VisDat</h4>
             </div>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Bukti penugasan resmi sebagai Asisten Praktikum Visualisasi Data (Mata Kuliah GCK2MAB2) Fakultas Ilmu Terapan.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100">
+            <a href="assets/docs/BAP_Asprak_Visualisasi_Data.pdf" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-sm transition-all">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+              <span>Buka Dokumen BAP</span>
+            </a>
+          </div>
         </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="section-divider"></div>
-        <div class="container">
-            <div class="section-header">
-                <div class="section-icon-wrapper">
-                    <svg class="section-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M12 6v6l4 2"></path>
-                    </svg>
-                </div>
-                <h2 class="section-title">Services</h2>
-                <p class="section-subtitle">Creates Professional Design That's Oriented Towards Client Needs</p>
+        <!-- Doc 3: SOP Midtrans -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                            <line x1="8" y1="21" x2="16" y2="21"></line>
-                            <line x1="12" y1="17" x2="12" y2="21"></line>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Web Developer</h3>
-                    <p class="service-description">
-                        I build responsive and interactive websites using HTML, CSS, JavaScript, and modern frameworks, focusing on performance, clean code, and cross-device compatibility.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">UI/UX Design</h3>
-                    <p class="service-description">
-                        I design intuitive, user-friendly interfaces that prioritize usability and visual consistency, applying user-centered design principles and prototyping tools like Figma.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                            <path d="M2 17l10 5 10-5"></path>
-                            <path d="M2 12l10 5 10-5"></path>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Branding</h3>
-                    <p class="service-description">
-                        Developing strong brand identity and visual communication strategies to help businesses establish a memorable and cohesive brand presence.
-                    </p>
-                </div>
+            <div>
+              <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider block">SOP Transaksi</span>
+              <h4 class="font-bold text-slate-900 text-sm mt-0.5">Dokumen SOP Midtrans Notisse</h4>
             </div>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Dokumen resmi alur transaksi end-to-end NTS/SOP-PAY/2026/01 untuk verifikasi integrasi Midtrans Snap dan kurir ekspedisi.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100">
+            <a href="assets/docs/FLOW_TRANSAKSI_NOTISSE_MIDTRANS.pdf" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-sm transition-all">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+              <span>Lihat Dokumen SOP</span>
+            </a>
+          </div>
         </div>
-    </section>
 
-    <!-- Resume Section -->
-    <section id="resume" class="resume">
-        <div class="section-divider"></div>
-        <div class="container">
-            <div class="section-header">
-                <div class="section-icon-wrapper">
-                    <svg class="section-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                        <polyline points="10 9 9 9 8 9"></polyline>
-                    </svg>
-                </div>
-                <h2 class="section-title">Resume</h2>
+        <!-- Doc 4: Sertifikat HAKI -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center">
+              <i data-lucide="stamp" class="w-6 h-6"></i>
             </div>
-            <div class="resume-content">
-                <div class="resume-section">
-                    <h3 class="resume-section-title">Education</h3>
-                    <div class="resume-item">
-                        <div class="resume-date">2023 - 2026</div>
-                        <div class="resume-details">
-                            <h4 class="resume-company">TELKOM UNIVERSITY</h4>
-                            <p class="resume-position">Associate Degree in Information Systems – GPA: 3.1</p>
-                            <ul class="resume-list">
-                                <li>Completed coursework in Programming Fundamentals, Web Development, UI/UX Design, and Database Systems</li>
-                                <li>Built responsive web interfaces using HTML, CSS, JavaScript, and React</li>
-                                <li>Participated in student tech competitions and coding workshops</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="resume-section">
-                    <h3 class="resume-section-title">My Skills</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <span class="skill-name">Figma</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">HTML5</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">CSS3</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">React</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Node.js</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">PHP</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">MySQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Git</span>
-                        </div>
-                    </div>
-                </div>
+            <div>
+              <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider block">Kemenkumham RI</span>
+              <h4 class="font-bold text-slate-900 text-sm mt-0.5">Sertifikat HAKI RefreshOil</h4>
             </div>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Sertifikat Hak Cipta resmi perangkat lunak RefreshOil yang melindungi arsitektur dan sistem distribusi minyak jelantah.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100">
+            <div class="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-amber-50 text-amber-800 text-xs font-semibold border border-amber-200">
+              <i data-lucide="check" class="w-4 h-4 text-amber-600"></i>
+              <span>Sah & Terdaftar DJKI</span>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="section-divider"></div>
-        <div class="container">
-            <div class="section-header">
-                <div class="section-icon-wrapper">
-                    <svg class="section-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                    </svg>
-                </div>
-                <h2 class="section-title">Contact</h2>
-            </div>
-            <div class="contact-content">
-                <div class="contact-form-wrapper">
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            <span>Send Message</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="22" y1="2" x2="11" y2="13"></line>
-                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                            </svg>
-                        </button>
-                    </form>
-                    <div id="contactSuccess" class="contact-success" style="display: none;">
-                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
-                        <h3>Message Sent!</h3>
-                        <p>Thank you for reaching out. I'll get back to you soon.</p>
-                    </div>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                        </div>
-                        <div class="contact-item-content">
-                            <div class="contact-label">Location</div>
-                            <p class="contact-text">Bandung, Jawa Barat</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                        </div>
-                        <div class="contact-item-content">
-                            <div class="contact-label">Phone</div>
-                            <a href="tel:+6285121367274" class="contact-link">
-                                <span>+62 851-2136-7274</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </div>
-                        <div class="contact-item-content">
-                            <div class="contact-label">Email</div>
-                            <a href="https://mail.google.com/mail/?view=cm&to=fatihmuhammadzaid406@gmail.com&su=Hello%20from%20Portfolio" target="_blank" class="contact-link">
-                                <span>fatihmuhammadzaid406@gmail.com</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Detail Modal -->
-    <div id="projectModal" class="project-modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <button class="modal-close" aria-label="Close modal">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-            <div class="modal-body" id="modalBody">
-                <!-- Project details will be loaded here -->
-            </div>
-        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-progress">
-        <div class="scroll-progress-bar"></div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">Muhammad Zaid Al Fatih</div>
-                <div class="footer-text">
-                    <p>&copy; 2026 Muhammad Zaid. All rights reserved.</p>
-                </div>
-            </div>
+  <!-- ==================== 6. WORK EXPERIENCE & EDUCATION ==================== -->
+  <section id="experience" class="py-16 md:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold text-blue-700 uppercase tracking-wider">
+          <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+          Perjalanan Profesional
         </div>
-    </footer>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Pengalaman Kerja & Pendidikan
+        </h2>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="space-y-8 relative before:absolute before:inset-0 before:left-5 sm:before:left-7 before:w-0.5 before:bg-slate-200">
+        
+        <!-- Item 1: Asisten Praktikum VisDat -->
+        <div class="relative flex items-start gap-4 sm:gap-6">
+          <div class="w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-bold shadow-md shadow-blue-600/30 flex-shrink-0 z-10">
+            <i data-lucide="line-chart" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+          </div>
+          <div class="glass-card flex-1 p-6 sm:p-8 rounded-2xl border border-slate-200/90 shadow-sm space-y-2">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-base sm:text-lg font-bold text-slate-900">Asisten Praktikum — Visualisasi Data</h3>
+              <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
+                Mar 2026 – Jul 2026
+              </span>
+            </div>
+            <div class="text-xs sm:text-sm font-semibold text-slate-600">
+              Fakultas Ilmu Terapan, Universitas Telkom
+            </div>
+            <ul class="text-xs sm:text-sm text-slate-600 space-y-1.5 list-disc list-inside pt-2">
+              <li>Mengelola situs <strong>Tableau Cloud</strong> mata kuliah: hak akses pengguna, publikasi workbook, dan koneksi sumber data.</li>
+              <li>Membimbing sekitar <strong>100 mahasiswa</strong> membuat dashboard Tableau (analisis utilisasi tempat parkir kampus, penggunaan KTM, dan analisis ketepatan waktu lulus berdasarkan IP semester 1–3).</li>
+              <li>Menilai tugas praktikum mingguan dan memberikan evaluasi umpan balik teknis objektif.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 2: Programmer Magang KK CITI -->
+        <div class="relative flex items-start gap-4 sm:gap-6">
+          <div class="w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-indigo-600 text-white flex items-center justify-center font-bold shadow-md shadow-indigo-600/30 flex-shrink-0 z-10">
+            <i data-lucide="terminal" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+          </div>
+          <div class="glass-card flex-1 p-6 sm:p-8 rounded-2xl border border-slate-200/90 shadow-sm space-y-2">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-base sm:text-lg font-bold text-slate-900">Programmer (Program Magang Berdampak)</h3>
+              <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200">
+                Feb 2026 – Jul 2026
+              </span>
+            </div>
+            <div class="text-xs sm:text-sm font-semibold text-slate-600">
+              Kelompok Keahlian CITI, Universitas Telkom
+            </div>
+            <ul class="text-xs sm:text-sm text-slate-600 space-y-1.5 list-disc list-inside pt-2">
+              <li>Membangun prototipe IoT: <strong>ESP32-CAM</strong> mengambil gambar layar treadmill, <strong>EasyOCR</strong> mengekstrak angka, dan halaman web menampilkan hasil pemantauan <em>real-time</em>.</li>
+              <li>Mengembangkan platform web soal latihan matematika SMP dinamis terintegrasi <strong>Groq API (Llama 3.3)</strong>.</li>
+              <li>Merancang arsitektur sistem dengan <strong>23 diagram UML</strong> (use case, activity, sequence, BPMN, ERD, class diagram) dan menyusun laporan evaluasi bulanan.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 3: Pendidikan D3 SI Telkom University -->
+        <div class="relative flex items-start gap-4 sm:gap-6">
+          <div class="w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-emerald-600 text-white flex items-center justify-center font-bold shadow-md shadow-emerald-600/30 flex-shrink-0 z-10">
+            <i data-lucide="graduation-cap" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+          </div>
+          <div class="glass-card flex-1 p-6 sm:p-8 rounded-2xl border border-slate-200/90 shadow-sm space-y-2">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-base sm:text-lg font-bold text-slate-900">Universitas Telkom — Diploma (D3) Sistem Informasi</h3>
+              <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                Sep 2023 – Agu 2026
+              </span>
+            </div>
+            <div class="text-xs sm:text-sm font-semibold text-slate-600 flex items-center gap-2">
+              <span>Fakultas Ilmu Terapan</span>
+              <span>•</span>
+              <span class="text-blue-700 font-bold">IPK: 3.30 / 4.00</span>
+            </div>
+            <ul class="text-xs sm:text-sm text-slate-600 space-y-1.5 list-disc list-inside pt-2">
+              <li>Penerima <strong>Beasiswa Anak Guru</strong> selama masa studi.</li>
+              <li>Memperoleh <strong>Sertifikat Hak Kekayaan Intelektual (HAKI)</strong> atas ciptaan perangkat lunak <em>RefreshOil</em>.</li>
+              <li>Aktif di organisasi Himpunan Mahasiswa D3 Sistem Informasi (HMDSI) sebagai Staf Olahraga, Seni, dan Budaya (2024–2025).</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 7. CONTACT SECTION ==================== -->
+  <section id="contact" class="py-16 md:py-24 bg-slate-950 text-white relative overflow-hidden">
+    <!-- Ambient Glows -->
+    <div class="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-900/60 border border-blue-700/60 text-xs font-bold text-blue-300 uppercase tracking-wider">
+          <i data-lucide="send" class="w-3.5 h-3.5"></i>
+          Mari Terhubung
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Siap Berkontribusi di Perusahaan Anda
+        </h2>
+        <p class="text-sm sm:text-base text-slate-400">
+          Saya terbuka untuk peluang kerja sebagai <strong>Junior Data Analyst</strong>, <strong>Business Intelligence</strong>, maupun <strong>Web Developer</strong>.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Quick Direct Contact Cards -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- WhatsApp Card -->
+          <a href="https://wa.me/6285121367274?text=Halo%20Zaid,%20saya%20melihat%20portofolio%20Anda%20dan%20ingin%20berdiskusi" target="_blank" class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 flex items-center gap-4 group transition-all">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+              <i data-lucide="message-circle" class="w-6 h-6"></i>
+            </div>
+            <div class="flex-1">
+              <div class="text-xs text-slate-400 font-medium">WhatsApp Cepat</div>
+              <div class="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">+62 851-2136-7274</div>
+            </div>
+            <i data-lucide="arrow-right" class="w-4 h-4 text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all"></i>
+          </a>
+
+          <!-- Email Card -->
+          <a href="mailto:fatihmuhammadzaid406@gmail.com?subject=Tawaran%20Kerja%20/%20Diskusi%20Portofolio" class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-blue-500/50 flex items-center gap-4 group transition-all">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+              <i data-lucide="mail" class="w-6 h-6"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-xs text-slate-400 font-medium">Email Langsung</div>
+              <div class="text-sm font-bold text-white truncate group-hover:text-blue-400 transition-colors">fatihmuhammadzaid406@gmail.com</div>
+            </div>
+            <i data-lucide="arrow-right" class="w-4 h-4 text-slate-600 group-hover:text-blue-400 group-hover:translate-x-1 transition-all"></i>
+          </a>
+
+          <!-- Location Card -->
+          <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center flex-shrink-0">
+              <i data-lucide="map-pin" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <div class="text-xs text-slate-400 font-medium">Domisili & Penempatan</div>
+              <div class="text-sm font-bold text-white">Depok, Jawa Barat</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Bersedia relokasi sesuai penempatan kerja</div>
+            </div>
+          </div>
+
+          <!-- Social Links Grid -->
+          <div class="grid grid-cols-2 gap-3 pt-2">
+            <a href="https://github.com/alllfatihh" target="_blank" class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-slate-600 flex items-center justify-center gap-2 text-xs font-semibold text-slate-300 hover:text-white transition-colors">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>GitHub Profile</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-slate-600 flex items-center justify-center gap-2 text-xs font-semibold text-slate-300 hover:text-white transition-colors">
+              <i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i>
+              <span>LinkedIn Profile</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Message Form -->
+        <div class="lg:col-span-7">
+          <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-xl">
+            <h3 class="text-lg font-bold text-white mb-1">Kirim Pesan Langsung</h3>
+            <p class="text-xs text-slate-400 mb-6">Pesan Anda akan otomatis disiapkan untuk dikirimkan ke email saya.</p>
+
+            <form id="contactForm" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="name" class="block text-xs font-semibold text-slate-300 mb-1">Nama Lengkap</label>
+                  <input type="text" id="name" name="name" required placeholder="Nama Anda" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 transition-colors" />
+                </div>
+                <div>
+                  <label for="email" class="block text-xs font-semibold text-slate-300 mb-1">Alamat Email</label>
+                  <input type="email" id="email" name="email" required placeholder="email@perusahaan.com" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 transition-colors" />
+                </div>
+              </div>
+
+              <div>
+                <label for="subject" class="block text-xs font-semibold text-slate-300 mb-1">Subjek / Keperluan</label>
+                <input type="text" id="subject" name="subject" required placeholder="Undangan Interview / Penawaran Kerja" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 transition-colors" />
+              </div>
+
+              <div>
+                <label for="message" class="block text-xs font-semibold text-slate-300 mb-1">Isi Pesan</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Tuliskan pesan atau detail pekerjaan di sini..." class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 transition-colors"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/30 transition-all flex items-center justify-center gap-2">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Kirim Pesan Sekarang</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 py-8 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <p>&copy; 2026 Muhammad Zaid Alfatih. All rights reserved.</p>
+        <p class="text-slate-500 text-[11px] mt-0.5">D3 Sistem Informasi · Universitas Telkom</p>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-medium">
+        <a href="#about" class="hover:text-white transition-colors">Tentang</a>
+        <a href="#projects" class="hover:text-white transition-colors">Proyek</a>
+        <a href="#credentials" class="hover:text-white transition-colors">Kredensial</a>
+        <a href="assets/docs/CV_Muhammad_Zaid_Alfatih.pdf" download="CV_Muhammad_Zaid_Alfatih.pdf" class="text-blue-400 hover:text-blue-300 transition-colors">Unduh CV</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== GLOBAL IMAGE LIGHTBOX MODAL ==================== -->
+  <div id="imageModal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/85 backdrop-blur-md hidden" role="dialog" aria-modal="true">
+    
+    <!-- Modal Card Container -->
+    <div class="relative w-full max-w-5xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[92vh]">
+      
+      <!-- Modal Header -->
+      <div class="px-5 py-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between flex-shrink-0">
+        <div class="flex items-center gap-2.5">
+          <span id="modalCategoryTag" class="px-2.5 py-1 rounded-md bg-blue-100 text-blue-700 text-[11px] font-bold uppercase tracking-wider">
+            Dokumentasi Sistem
+          </span>
+          <h3 id="modalTitle" class="font-bold text-sm sm:text-base text-slate-900 truncate max-w-md sm:max-w-xl">
+            Pratinjau Screenshot
+          </h3>
+        </div>
+
+        <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-700 flex items-center justify-center transition-colors focus:outline-none" aria-label="Tutup">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Image View) -->
+      <div class="p-3 sm:p-5 overflow-auto bg-slate-900/5 flex items-center justify-center flex-1">
+        <img id="modalImg" src="" alt="Pratinjau Bukti" class="max-h-[68vh] w-auto max-w-full rounded-xl object-contain shadow-md border border-slate-200 bg-white" />
+      </div>
+
+      <!-- Modal Footer (Caption & Info) -->
+      <div class="px-5 py-3.5 bg-white border-t border-slate-200 flex-shrink-0">
+        <p id="modalCaptionText" class="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+          Keterangan detail mengenai antarmuka atau bukti sistem yang ditampilkan.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
