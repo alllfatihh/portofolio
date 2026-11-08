@@ -556,11 +556,15 @@
               <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-purple-700">PHPUnit</span>
             </div>
 
-            <!-- Action Link: SOP PDF -->
+            <!-- Action Links: Notisse Document, SOP & GitHub -->
             <div class="pt-2 flex flex-wrap gap-3">
-              <a href="assets/docs/FLOW_TRANSAKSI_NOTISSE_MIDTRANS.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-sm transition-all">
+              <a href="assets/docs/DOKUMEN_AKHIR_NOTISSE_ECOMMERCE.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-sm transition-all">
                 <i data-lucide="file-text" class="w-4 h-4"></i>
-                <span>Buka Dokumen SOP Midtrans (PDF)</span>
+                <span>Buka Dokumen Akhir Notisse (PDF)</span>
+              </a>
+              <a href="assets/docs/FLOW_TRANSAKSI_NOTISSE_MIDTRANS.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 transition-all">
+                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                <span>SOP Midtrans (PDF)</span>
               </a>
               <a href="https://github.com/alllfatihh/e-commerce" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold border border-slate-200 transition-all">
                 <i data-lucide="github" class="w-4 h-4"></i>
@@ -570,66 +574,85 @@
 
           </div>
 
-          <!-- Right: Real Screenshot Gallery -->
+          <!-- Right: Real Screenshot Gallery from Final Document -->
           <div class="lg:col-span-6 space-y-4">
             <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3">
               <div class="flex items-center justify-between text-xs font-semibold text-slate-700 pb-2 border-b border-slate-200">
                 <span class="flex items-center gap-1.5 text-blue-700 font-bold">
-                  <i data-lucide="camera" class="w-4 h-4"></i> Dokumentasi Nyata Sistem Notisse
+                  <i data-lucide="camera" class="w-4 h-4"></i> Dokumentasi Nyata Sistem Notisse (Dokumen Akhir)
                 </span>
                 <span class="text-blue-600 font-medium text-[11px]">Klik gambar untuk memperbesar</span>
               </div>
 
-              <!-- Featured Screenshot: Storefront -->
-              <div class="proof-thumbnail aspect-video shadow-sm" onclick="openModal('assets/projects/notisse/03_storefront_catalog.png', 'Notisse Storefront Catalog', 'Katalog etalase produk fashion & karya seni dengan filter kategori, harga real-time, dan status ketersediaan stok.', 'E-Commerce Storefront')">
-                <img src="assets/projects/notisse/03_storefront_catalog.png" alt="Katalog Notisse" class="w-full h-full object-cover" />
+              <!-- Featured Screenshot: Editorial Storefront Homepage -->
+              <div class="proof-thumbnail aspect-video shadow-sm" onclick="openModal('assets/projects/notisse/01_storefront_homepage.png', 'Notisse Storefront Homepage & Editorial Showcase', 'Halaman muka Notisse mengusung estetika editorial visual dengan marquee dinamis, hero visual kolaborasi seniman Mustafa Alatas, serta navigasi modular ke katalog busana, kurasi seni, dan profil atelier.', 'Editorial Storefront')">
+                <img src="assets/projects/notisse/01_storefront_homepage.png" alt="Beranda Notisse" class="w-full h-full object-cover" />
                 <div class="zoom-overlay">
-                  <i data-lucide="zoom-in" class="w-5 h-5"></i> Perbesar Katalog Etalase
+                  <i data-lucide="zoom-in" class="w-5 h-5"></i> Perbesar Halaman Beranda
                 </div>
               </div>
 
-              <!-- 4 Sub Thumbnails Grid -->
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              <!-- 5 Sub Thumbnails Grid from Final Document -->
+              <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
                 
-                <!-- Thumb 1: Cart Drawer -->
-                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/notisse/05_cart_drawer.png', 'Cart Drawer & Ringkasan Subtotal', 'Keranjang belanja samping interaktif yang menghitung subtotal belanja secara dinamis tanpa reload halaman.', 'Cart System')">
-                  <img src="assets/projects/notisse/05_cart_drawer.png" alt="Cart Drawer" class="w-full h-full object-cover" />
+                <!-- Thumb 1: Product Detail & Size Selector -->
+                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/notisse/02_product_detail.png', 'Halaman Detail Produk Busana & Size Selector', 'Halaman detail produk menyajikan galeri foto detail, spesifikasi kain (100% breathable cotton), harga resmi, informasi seniman, dan panduan ukuran (Size Chart).', 'Product Detail')">
+                  <img src="assets/projects/notisse/02_product_detail.png" alt="Detail Produk" class="w-full h-full object-cover" />
                   <div class="zoom-overlay text-[10px]">
-                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Keranjang
+                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Detail Produk
                   </div>
                 </div>
 
-                <!-- Thumb 2: Checkout Address -->
-                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/notisse/06_checkout_page.png', 'Halaman Checkout & Ekspedisi Biteship', 'Formulir pengiriman alamat pembeli dengan integrasi tarif kurir ekspedisi (JNE, Sicepat, J&T) via API Biteship.', 'Checkout & Shipping')">
-                  <img src="assets/projects/notisse/06_checkout_page.png" alt="Checkout Page" class="w-full h-full object-cover" />
+                <!-- Thumb 2: Checkout & Biteship -->
+                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/notisse/04_checkout_biteship.png', 'Halaman Checkout, Logistik Biteship & Kupon Diskon', 'Pusat formulir pemesanan busana yang mengintegrasikan verifikasi alamat lengkap konsumen, pemilihan layanan kurir Biteship, dan validasi kode kupon promo.', 'Checkout & Logistics')">
+                  <img src="assets/projects/notisse/04_checkout_biteship.png" alt="Checkout Biteship" class="w-full h-full object-cover" />
                   <div class="zoom-overlay text-[10px]">
                     <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Checkout
                   </div>
                 </div>
 
-                <!-- Thumb 3: Midtrans Payment Modal -->
-                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/notisse/flow_p3_X61.png', 'Pop-up Pembayaran Midtrans Snap', 'Integrasi gateway resmi Midtrans Snap mendukung pembayaran QRIS, Virtual Account seluruh bank, dan e-Wallet dengan callback otomatis.', 'Payment Gateway')">
-                  <img src="assets/projects/notisse/flow_p3_X61.png" alt="Midtrans Snap Modal" class="w-full h-full object-cover" />
+                <!-- Thumb 3: Midtrans Snap Payment -->
+                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/notisse/05_midtrans_payment.png', 'Gerbang Pembayaran Midtrans Snap', 'Jendela modal pembayaran terenkripsi bank-grade Midtrans Snap mendukung multi-metode: QRIS, Bank Virtual Account (BCA, Mandiri, BRI, BNI), Kartu Kredit, dan e-Wallet dengan callback validasi server otomatis.', 'Payment Gateway')">
+                  <img src="assets/projects/notisse/05_midtrans_payment.png" alt="Midtrans Snap" class="w-full h-full object-cover" />
                   <div class="zoom-overlay text-[10px]">
                     <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Midtrans
                   </div>
                 </div>
 
-                <!-- Thumb 4: PHPUnit Test -->
-                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/notisse/12_phpunit_test_execution.png', 'Bukti Pengujian Otomatis PHPUnit', 'Seluruh unit test dan feature test (stok, order, callback verifikasi) dieksekusi dengan status 100% Passed tanpa kegagalan.', 'Automated Testing')">
-                  <img src="assets/projects/notisse/12_phpunit_test_execution.png" alt="PHPUnit Test Proof" class="w-full h-full object-cover" />
+                <!-- Thumb 4: Artwork Acquisition Inquiry -->
+                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/notisse/06_artwork_inquiry.png', 'Detail Karya Seni & Modal Penawaran Kolektor (Buy Inquiry)', 'Menampilkan kanvas fisik karya Mustafa Alatas (Oil on canvas 60x60cm, Nilai Kurasi Rp 15.000.000) dan modal formulir penawaran resmi untuk kolektor terverifikasi.', 'Fine Art Inquiry')">
+                  <img src="assets/projects/notisse/06_artwork_inquiry.png" alt="Artwork Inquiry" class="w-full h-full object-cover" />
                   <div class="zoom-overlay text-[10px]">
-                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Uji PHPUnit
+                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Seni Murni
+                  </div>
+                </div>
+
+                <!-- Thumb 5: Admin Dashboard -->
+                <div class="proof-thumbnail aspect-[4/3]" onclick="openModal('assets/projects/notisse/08_admin_dashboard.png', 'Dasbor Administrator & Ringkasan Metrik Bisnis', 'Pusat komando operasional Notisse dengan sistem keamanan Role-Based Access Control (RBAC), grafik tren omzet penjualan, metrik pesanan harian, dan pintasan cepat kontrol inventaris.', 'Admin Command Center')">
+                  <img src="assets/projects/notisse/08_admin_dashboard.png" alt="Admin Dashboard" class="w-full h-full object-cover" />
+                  <div class="zoom-overlay text-[10px]">
+                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Dasbor Admin
                   </div>
                 </div>
 
               </div>
 
-              <!-- Admin Dashboard Additional Proof Banner -->
-              <div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-between text-xs cursor-pointer hover:border-blue-400 transition-all" onclick="openModal('assets/projects/notisse/09_admin_dashboard.png', 'Dasbor Analitik Penjualan Admin', 'Panel kontrol admin menyajikan metrik omzet penjualan, grafik tren pesanan harian, status inventaris produk, dan manajemen hak akses staf.', 'Admin Analytics')">
+              <!-- Collector Portal & Negotiation Banner -->
+              <div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-between text-xs cursor-pointer hover:border-blue-400 transition-all" onclick="openModal('assets/projects/notisse/07_collector_portal.png', 'Portal Kolektor: Persetujuan Harga Banding & Pelunasan Seni', 'Portal khusus kolektor untuk meninjau penawaran harga banding (counter-offer) yang disetujui kurator atelier Notisse, status verifikasi kepemilikan, dan tombol pelunasan karya seni.', 'Collector Portal')">
                 <div class="flex items-center gap-2">
-                  <i data-lucide="layout-dashboard" class="w-4 h-4 text-blue-600"></i>
-                  <span class="font-semibold text-slate-800">Lihat Dashboard Analitik & Manajemen Admin</span>
+                  <i data-lucide="sparkles" class="w-4 h-4 text-indigo-600"></i>
+                  <span class="font-semibold text-slate-800">Lihat Portal Kolektor & Mekanisme Negosiasi Karya Seni</span>
+                </div>
+                <span class="text-blue-600 font-bold flex items-center gap-1">
+                  Buka <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+
+              <!-- Biteship Logistics & AWB Tracking Banner -->
+              <div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-between text-xs cursor-pointer hover:border-blue-400 transition-all" onclick="openModal('assets/projects/notisse/10_admin_orders_biteship.png', 'Manajemen Pesanan & Sinkronisasi Resi AWB Biteship', 'Antarmuka admin untuk memantau status pesanan (Pending, Paid, Shipped, Delivered) serta sinkronisasi otomatis nomor resi kurir ekspedisi (JNE, TIKI, Sicepat) via Biteship API.', 'Logistics Operations')">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="truck" class="w-4 h-4 text-emerald-600"></i>
+                  <span class="font-semibold text-slate-800">Lihat Panel Manajemen Pesanan & Pelacakan Resi Biteship</span>
                 </div>
                 <span class="text-blue-600 font-bold flex items-center gap-1">
                   Buka <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
@@ -1121,24 +1144,24 @@
           </div>
         </div>
 
-        <!-- Doc 3: SOP Midtrans -->
+        <!-- Doc 3: Dokumen Akhir Notisse E-Commerce -->
         <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
           <div class="space-y-3">
             <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
               <i data-lucide="shield-check" class="w-6 h-6"></i>
             </div>
             <div>
-              <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider block">SOP Transaksi</span>
-              <h4 class="font-bold text-slate-900 text-sm mt-0.5">Dokumen SOP Midtrans Notisse</h4>
+              <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider block">Dokumen Akhir Proyek</span>
+              <h4 class="font-bold text-slate-900 text-sm mt-0.5">Dokumen Akhir Notisse E-Commerce</h4>
             </div>
             <p class="text-xs text-slate-500 leading-relaxed">
-              Dokumen resmi alur transaksi end-to-end NTS/SOP-PAY/2026/01 untuk verifikasi integrasi Midtrans Snap dan kurir ekspedisi.
+              Spesifikasi arsitektur menyeluruh, alur UI/UX, integrasi Midtrans Snap, kalkulator logistik Biteship, serta mekanisme kurasi karya seni.
             </p>
           </div>
           <div class="pt-4 border-t border-slate-100">
-            <a href="assets/docs/FLOW_TRANSAKSI_NOTISSE_MIDTRANS.pdf" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-sm transition-all">
+            <a href="assets/docs/DOKUMEN_AKHIR_NOTISSE_ECOMMERCE.pdf" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-sm transition-all">
               <i data-lucide="external-link" class="w-4 h-4"></i>
-              <span>Lihat Dokumen SOP</span>
+              <span>Buka Dokumen Akhir (PDF)</span>
             </a>
           </div>
         </div>
