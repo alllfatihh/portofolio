@@ -143,14 +143,9 @@
 
     <!-- ==================== 1. COVER / HERO SECTION ==================== -->
     <section id="cover"
-        class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 text-white border-b border-slate-800">
-        <!-- Ambient Glow Orbs -->
-        <div
-            class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none">
-        </div>
-        <div class="absolute top-10 right-10 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none">
-        </div>
-        <div class="absolute bottom-10 left-10 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none">
+        class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-slate-950 text-white border-b border-slate-800">
+        <!-- Subtle Neutral Technical Grid (No AI Color Glows) -->
+        <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none">
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -173,7 +168,7 @@
                         <h1
                             class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
                             Muhammad Zaid <br />
-                            <span class="gradient-hero-text">Al Fatih</span>
+                            <span class="text-blue-400">Al Fatih</span>
                         </h1>
                         <p class="text-base sm:text-xl font-medium text-blue-300/90 font-mono">
                             Junior Data Analyst & Full-Stack Web Developer
@@ -253,18 +248,13 @@
 
                 </div>
 
-                <!-- Right Visual: Profile Photo & Card Showcase -->
+                <!-- Right Visual: Profile Photo Showcase (Clean & Solid) -->
                 <div class="lg:col-span-5 flex justify-center">
                     <div class="relative w-full max-w-sm">
 
-                        <!-- Glow background -->
+                        <!-- Profile Image Container with Sleek Hardware Bezel -->
                         <div
-                            class="absolute -inset-1.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 rounded-3xl blur-xl opacity-30 group-hover:opacity-60 transition duration-1000">
-                        </div>
-
-                        <!-- Profile Image Container -->
-                        <div
-                            class="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-700 shadow-2xl p-2.5">
+                            class="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-700/80 shadow-2xl p-2.5 ring-1 ring-slate-800">
                             <div class="rounded-xl overflow-hidden aspect-[4/5] bg-slate-800 relative">
                                 <img src="profil.png" alt="Muhammad Zaid Alfatih"
                                     class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" />
@@ -295,111 +285,154 @@
     </section>
 
     <!-- ==================== 2. ABOUT & COMPETENCY PILLARS ==================== -->
-    <section id="about" class="py-16 md:py-24 bg-white border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" class="py-16 md:py-24 bg-slate-50/70 border-b border-slate-200 relative">
+        <!-- Subtle Neutral Technical Grid (No AI Colors) -->
+        <div class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none">
+        </div>
 
-            <!-- Section Header -->
-            <div class="text-center max-w-3xl mx-auto space-y-3">
-                <div
-                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold text-blue-700 uppercase tracking-wider">
-                    <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
-                    Profil Profesional
-                </div>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                    Menjembatani Analisis Data & Eksekusi Rekayasa Web
-                </h2>
-                <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-                    Saya tidak hanya menganalisis angka untuk menghasilkan insight bisnis melalui visualisasi data dan
-                    BI, namun juga mampu merancang, membangun, serta mengintegrasikan aplikasi web modern yang aman dan
-                    teruji.
-                </p>
-            </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-            <!-- 4 Pillars Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
-                <!-- Pillar 1 -->
-                <div
-                    class="glass-card p-6 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between">
+                <!-- Left Column: Authentic Professional Story & Standards -->
+                <div class="lg:col-span-5 space-y-6">
                     <div class="space-y-3">
                         <div
-                            class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600">
-                            <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-300 text-xs font-bold text-slate-800 uppercase tracking-wider">
+                            <i data-lucide="user" class="w-3.5 h-3.5 text-slate-600"></i>
+                            Profil & Latar Belakang
                         </div>
-                        <h3 class="font-bold text-slate-900 text-base">Data & BI Analytics</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            Mengelola Tableau Cloud, merancang dashboard interaktif (parkir, KTM, kelulusan), serta
-                            melakukan pemodelan data dengan SQL dan Python.
-                        </p>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                            Analisis Data yang Terarah, Eksekusi Rekayasa yang Teruji
+                        </h2>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-                        <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Tableau Cloud</span>
-                        <span class="tech-pill px-2 py-0.5 rounded text-[10px]">SQL / MySQL</span>
-                        <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Python</span>
-                    </div>
-                </div>
 
-                <!-- Pillar 2 -->
-                <div
-                    class="glass-card p-6 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600">
-                            <i data-lucide="code-2" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-base">Full-Stack Laravel</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            Membangun aplikasi web skala produksi dengan Laravel 12, integrasi payment gateway Midtrans
-                            Snap, API ekspedisi kurir Biteship, dan RBAC.
+                    <div class="space-y-3.5 text-sm text-slate-600 leading-relaxed">
+                        <p>
+                            Lulusan <strong>D3 Sistem Informasi Telkom University</strong> (IPK 3.30) dengan pendekatan kerja yang menggabungkan presisi analisis data kuantitatif dan ketangguhan arsitektur web backend.
+                        </p>
+                        <p>
+                            Sebagai <strong>Asisten Praktikum Visualisasi Data</strong>, saya membimbing 100+ mahasiswa mengolah dataset operasional kampus ke dalam <em>Tableau Cloud</em>. Di bidang rekayasa web, saya merancang dan meluncurkan sistem berskala produksi—mulai dari integrasi pembayaran otomatis <em>Midtrans Snap</em>, prototipe sensing IoT <em>ESP32-CAM</em> &amp; <em>EasyOCR</em>, hingga platform LMS dengan mesin kalkulasi presisi tinggi (<em>PHP BCMath</em>).
+                        </p>
+                        <p>
+                            Fokus utama saya adalah keandalan fungsional: memastikan integritas data tetap terjaga, setiap jalur logika bisnis teruji tuntas (39/39 pengujian black box valid 100%), serta kepatuhan hukum melalui kepemilikan <strong>Hak Cipta Resmi (HAKI) Kemenkumham RI</strong>.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-                        <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Laravel 12</span>
-                        <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Midtrans</span>
-                        <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Tailwind</span>
+
+                    <!-- Quality Standards Card -->
+                    <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+                        <div class="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-slate-700"></i>
+                            Standar Kualitas &amp; Eksekusi
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 text-xs">
+                            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+                                <div class="font-bold text-slate-900 font-mono text-sm">Data Integrity</div>
+                                <div class="text-[11px] text-slate-500 mt-0.5">Pemodelan relasional bersih &amp; validasi ketat</div>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+                                <div class="font-bold text-slate-900 font-mono text-sm">Deterministic</div>
+                                <div class="text-[11px] text-slate-500 mt-0.5">Komputasi bebas floating-point error</div>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+                                <div class="font-bold text-slate-900 font-mono text-sm">Production Ready</div>
+                                <div class="text-[11px] text-slate-500 mt-0.5">Telah live di Railway &amp; web komersial</div>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+                                <div class="font-bold text-slate-900 font-mono text-sm">Tested (100%)</div>
+                                <div class="text-[11px] text-slate-500 mt-0.5">39 skenario black box lolos sempurna</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Pillar 3 -->
-                <div
-                    class="glass-card p-6 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600">
-                            <i data-lucide="sparkles" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-bold text-slate-900 text-base">Integrasi AI & Otomasi</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            Mengintegrasikan Large Language Model melalui Groq API (Llama 3.3) untuk pembuatan bank soal
-                            otomatis dan sistem evaluasi ujian dinamis.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-                        <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Groq API</span>
-                        <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Llama 3.3</span>
-                        <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Prompt Eng</span>
-                    </div>
-                </div>
+                <!-- Right Column: 4 Core Competency Cards (Unified Professional Slate) -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-                <!-- Pillar 4 -->
-                <div
-                    class="glass-card p-6 rounded-2xl border border-slate-200/90 shadow-sm flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
-                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                    <!-- Card 1: Data & BI -->
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-slate-400 transition-all shadow-sm flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold shadow-sm">
+                                <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base">Business Intelligence &amp; Data</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Pengelolaan Tableau Cloud, perancangan dashboard analisis multi-metrik (parkir kampus, KTM, kelulusan), serta query SQL analitis untuk penarikan insight.
+                            </p>
                         </div>
-                        <h3 class="font-bold text-slate-900 text-base">IoT & OCR Sensing</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            Merancang prototipe pengambilan citra layar treadmill menggunakan ESP32-CAM, pemrosesan
-                            EasyOCR, dan visualisasi web real-time.
-                        </p>
+                        <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5 mt-4">
+                            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Tableau Cloud</span>
+                            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">MySQL</span>
+                            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Python</span>
+                            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Data Modeling</span>
+                        </div>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-                        <span class="tech-pill px-2 py-0.5 rounded text-[10px]">ESP32-CAM</span>
-                        <span class="tech-pill px-2 py-0.5 rounded text-[10px]">EasyOCR</span>
-                        <span class="tech-pill px-2 py-0.5 rounded text-[10px]">IoT Dashboard</span>
+
+                    <!-- Card 2: Full-Stack Web -->
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-slate-400 transition-all shadow-sm flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold shadow-sm">
+                                <i data-lucide="layers" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base">Rekayasa Web &amp; REST API</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Pengembangan arsitektur Laravel (v11/v12) berorientasi domain service, RESTful API, integrasi Payment Gateway Midtrans Snap, kurir Biteship, dan RBAC.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5 mt-4">
+                            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Laravel 11/12</span>
+                            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Midtrans Snap</span>
+                            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Biteship API</span>
+                            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Tailwind</span>
+                        </div>
                     </div>
+
+                    <!-- Card 3: Precise Computing Engine -->
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-slate-400 transition-all shadow-sm flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold shadow-sm">
+                                <i data-lucide="calculator" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base">Komputasi &amp; Logika Presisi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Pembangunan mesin kalkulasi rumus matematika dengan PHP BCMath presisi absolut, eliminasi floating-point error, dan penguncian variabel per sesi kuis.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5 mt-4">
+                            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">PHP BCMath</span>
+                            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Domain Service</span>
+                            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Math Engine</span>
+                            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Anti-Cheat</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Applied IoT & Automation -->
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-slate-400 transition-all shadow-sm flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-slate-900 text-white flex items-center justify-center font-bold shadow-sm">
+                                <i data-lucide="cpu" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base">Sistem Terapan &amp; Otomasi</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Prototyping hardware ESP32-CAM dengan optical character recognition (EasyOCR), serta pemanfaatan Groq API (Llama 3.3) untuk asisten pembuatan draf materi guru.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5 mt-4">
+                            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">ESP32-CAM</span>
+                            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">EasyOCR</span>
+                            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Groq API</span>
+                            <span class="tech-pill px-2 py-0.5 rounded text-[10px]">Automation</span>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -412,8 +445,8 @@
 
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <div
-                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-xs font-bold text-indigo-700 uppercase tracking-wider">
-                    <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-300 text-xs font-bold text-slate-800 uppercase tracking-wider">
+                    <i data-lucide="cpu" class="w-3.5 h-3.5 text-slate-600"></i>
                     Daftar Keterampilan Teknis
                 </div>
                 <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -1794,10 +1827,8 @@
 
     <!-- ==================== 7. CONTACT SECTION ==================== -->
     <section id="contact" class="py-16 md:py-24 bg-slate-950 text-white relative overflow-hidden">
-        <!-- Ambient Glows -->
-        <div class="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none">
-        </div>
+        <!-- Subtle Neutral Technical Grid (No AI Colors) -->
+        <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 

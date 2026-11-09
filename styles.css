@@ -39,71 +39,49 @@ body {
   background: #94a3b8;
 }
 
-/* Top Progress Bar */
+/* Top Progress Bar (Solid Professional Blue) */
 #scrollProgressBar {
   position: fixed;
   top: 0;
   left: 0;
-  height: 3.5px;
-  background: linear-gradient(90deg, #2563eb, #6366f1, #06b6d4);
+  height: 3px;
+  background: #2563eb;
   z-index: 100;
   width: 0%;
   transition: width 0.1s ease;
 }
 
-/* Glass Card with Spotlight Hover */
+/* Structured Clean Card */
 .glass-card {
   position: relative;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 232, 240, 0.95);
-  box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.05), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.glass-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border-radius: inherit;
-  background: radial-gradient(400px circle at var(--mouse-x, -400px) var(--mouse-y, -400px), rgba(37, 99, 235, 0.08), transparent 65%);
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.glass-card:hover::before {
-  opacity: 1;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(37, 99, 235, 0.35);
-  box-shadow: 0 20px 40px -8px rgba(37, 99, 235, 0.12);
+  transform: translateY(-3px);
+  border-color: #94a3b8;
+  box-shadow: 0 12px 24px -4px rgba(15, 23, 42, 0.08);
 }
 
 /* Dark Accent Hero Card */
 .dark-accent-card {
-  background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+  background: #0f172a;
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.3);
 }
 
-/* Gradient Typography */
+/* Professional Typography */
 .gradient-hero-text {
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0284c7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #60a5fa;
 }
 
 .gradient-accent {
-  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #2563eb;
 }
 
 /* Tech Pill Badges */
