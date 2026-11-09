@@ -818,23 +818,28 @@
                 </div>
             </div>
 
-            <!-- ==================== PROJECT 2: AI LMS MATHEMATICS ==================== -->
+            <!-- ==================== PROJECT 2: AI LMS MATHEMATICS (TUGAS AKHIR) ==================== -->
             <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-lg mb-16">
 
                 <!-- Project Top Bar -->
                 <div class="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-slate-100">
-                    <div class="flex items-center gap-2">
+                    <div class="flex flex-wrap items-center gap-2">
                         <span
-                            class="px-3 py-1 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-xs font-bold flex items-center gap-1.5">
-                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-                            Program Magang Berdampak · KK CITI · Groq API (Llama 3.3)
+                            class="px-3 py-1 rounded-full bg-purple-100 border border-purple-200 text-purple-800 text-xs font-bold flex items-center gap-1.5">
+                            <i data-lucide="graduation-cap" class="w-4 h-4 text-purple-600"></i>
+                            Tugas Akhir Resmi D3 Sistem Informasi · Telkom University
                         </span>
-                        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
-                            Feb - Jul 2026
+                        <span
+                            class="px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold flex items-center gap-1.5">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                            Groq Cloud API (Llama 3.3 70B) · BCMath Engine
+                        </span>
+                        <span class="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold">
+                            39/39 Black Box Test Valid
                         </span>
                     </div>
                     <div class="text-xs font-mono text-slate-500">
-                        Telkom University
+                        NIM: 607012330007 · Telkom University
                     </div>
                 </div>
 
@@ -843,48 +848,42 @@
                     <!-- Left: Problem, Contribution, Metrics -->
                     <div class="lg:col-span-6 space-y-6">
                         <div>
+                            <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-purple-700 mb-1">
+                                <i data-lucide="award" class="w-3.5 h-3.5"></i> Riset & Pengembangan Tugas Akhir
+                            </div>
                             <h3 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
-                                Platform Soal Latihan Dinamis Matematika SMP Berbasis AI
+                                Pengembangan Platform Soal Latihan Dinamis Pembelajaran Matematika SMP Berbasis Web
                             </h3>
                             <p class="text-xs sm:text-sm text-purple-600 font-semibold mt-1">
-                                Generasi variasi soal otomatis dengan AI Groq (Llama 3.3), evaluasi jawaban desimal
-                                akurat & audit ujian.
+                                Kombinasi Rule-Based Variable Randomization, Mesin Evaluasi Numerik Presisi Tinggi (BCMath), dan Asisten Pembuat Draf Soal AI Llama 3.3 70B.
                             </p>
                         </div>
 
-                        <!-- Problem Background -->
+                        <!-- Problem Background & Research Gap -->
                         <div class="space-y-2">
                             <h4
                                 class="font-bold text-slate-900 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
                                 <i data-lucide="alert-circle" class="w-4 h-4 text-amber-500"></i>
-                                Latar Belakang Masalah
+                                Latar Belakang & Celah Riset (Research Gap)
                             </h4>
                             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                                Bank soal latihan matematika konvensional bersifat statis sehingga siswa mudah menghafal
-                                jawaban daripada memahami konsep. Selain itu, para guru di sekolah memerlukan waktu yang
-                                sangat lama untuk menyusun puluhan variasi soal beserta langkah penyelesaian dan kunci
-                                jawaban secara manual.
+                                Evaluasi komparatif terhadap platform populer (<strong>Moodle, Google Classroom, Edmodo, Quizizz</strong>) membuktikan tidak adanya sistem yang menggabungkan tiga pilar sekaligus: (1) Pengacakan nilai variabel di dalam template soal, (2) Auto-grading numerik presisi tinggi, dan (3) Umpan balik berumus instan. Bank soal konvensional yang statis memicu kecurangan siswa dan membebani guru dengan koreksi manual yang memakan waktu 1–3 hari.
                             </p>
                         </div>
 
-                        <!-- Key Contributions -->
+                        <!-- Key Contributions & Architecture -->
                         <div class="space-y-2">
                             <h4
                                 class="font-bold text-slate-900 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
                                 <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i>
-                                Kontribusi & Solusi Arsitektur
+                                Inovasi Rekayasa Perangkat Lunak & Arsitektur
                             </h4>
-                            <ul class="text-xs sm:text-sm text-slate-600 space-y-1.5 list-disc list-inside">
-                                <li>Mengembangkan platform web terintegrasi menggunakan <strong>Laravel & Groq API
-                                        (Llama 3.3)</strong> untuk pembuatan soal dinamis dalam hitungan detik.</li>
-                                <li>Merancang sistem <strong>Role-Based Access Control (RBAC)</strong> komprehensif
-                                    memisahkan hak akses antarmuka Guru dan Siswa.</li>
-                                <li>Menerapkan algoritma mesin evaluasi ujian otomatis dengan toleransi desimal
-                                    menggunakan <code>bccomp()</code> dan normalisasi parsing ekspresi matematika.</li>
-                                <li>Membuat fitur <strong>Audit Ujian Siswa</strong> yang memetakan waktu pengerjaan per
-                                    soal, tingkat kesulitan, dan riwayat analisis kesalahan.</li>
-                                <li>Menyusun dokumentasi arsitektur sistem lengkap dengan <strong>23 diagram
-                                        UML</strong> (Use Case, Activity, Sequence, BPMN, ERD, Class Diagram).</li>
+                            <ul class="text-xs sm:text-sm text-slate-600 space-y-2 list-disc list-inside">
+                                <li><strong>Isolasi Domain Service (EvaluasiSoalService):</strong> Memisahkan logika inti bisnis ke dalam service mandiri dengan metode <code>hasilkanVariabel()</code>, <code>uraiTemplatSoal()</code>, <code>hitungRumus()</code> via <em>MathExecutor</em>, dan <code>jawabanNumerikSama()</code>.</li>
+                                <li><strong>Mesin Penilaian Presisi Tinggi (PHP BCMath):</strong> Mengeliminasi <em>floating-point rounding error</em> pada bilangan pecahan/desimal dengan perbandingan string biner presisi absolut (toleransi 2 desimal).</li>
+                                <li><strong>Mekanisme Anti-Curang & Sesi Terkunci:</strong> Angka acak dikunci ke entitas <code>JAWABAN.generated_variables</code> (JSON) per sesi ujian, sehingga siswa tidak dapat memanipulasi angka dengan memuat ulang halaman (anti-F5) dan guru dapat mengaudit alur hitung siswa secara transparan.</li>
+                                <li><strong>Integrasi AI Llama 3.3 70B (Human-in-the-Loop):</strong> Memanfaatkan Groq Cloud API eksklusif bagi guru untuk menghasilkan draf materi dan template rumus matematika dalam &lt; 2 detik, dibatasi kuota 5 permintaan/hari dengan validasi format JSON ketat. Ketepatan kalkulasi 100% deterministik dijamin oleh Math Engine, bukan prediksi LLM.</li>
+                                <li><strong>Pemodelan Sistem Menyeluruh (23 Diagram UML):</strong> Arsitektur 11 Model Eloquent + 1 Service, skema ERD 11 entitas, pemisahan RBAC multi-aktor (Guru, Siswa, AI), dan alur interaksi terstandarisasi.</li>
                             </ul>
                         </div>
 
@@ -893,46 +892,44 @@
                             <h4
                                 class="font-bold text-slate-900 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
                                 <i data-lucide="trophy" class="w-4 h-4 text-amber-500"></i>
-                                Hasil & Bukti Terverifikasi
+                                Hasil Pengujian Fungsional (Black Box Testing)
                             </h4>
                             <div
-                                class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 space-y-2">
-                                <p>
-                                    ✓ 10 dari 10 skenario pengujian integrasi AI Groq berhasil 100% tanpa malformasi
-                                    format soal (JSON parser valid).
+                                class="p-4 rounded-xl bg-purple-50/70 border border-purple-200 text-xs sm:text-sm text-slate-700 space-y-2">
+                                <p class="text-purple-950 font-bold flex items-center gap-1.5">
+                                    <i data-lucide="check-check" class="w-4 h-4 text-emerald-600"></i>
+                                    100% Validitas: 39 dari 39 Skenario Pengujian Black Box Berhasil Sempurna
                                 </p>
-                                <p class="text-purple-800 font-semibold">
-                                    ★ Diuji melalui 12 skenario pengujian RBAC dengan tingkat keberhasilan 100%,
-                                    terdokumentasi resmi di Laporan Magang Berdampak KK CITI Telkom University.
+                                <p class="text-slate-600">
+                                    ✓ Menguji seluruh jalur normal dan alternatif: isolasi otentikasi RBAC, pembagian kelas berbasis token unik, pembangkitan variabel acak, toleransi desimal BCMath, limitasi kuota AI, hingga auto-scoring instan.
+                                </p>
+                                <p class="text-emerald-800 font-semibold">
+                                    ★ Mengeliminasi waktu tunggu koreksi manual guru dari 1–3 hari menjadi 0 detik (instan dengan auto-feedback rumus penyelesaian).
                                 </p>
                             </div>
                         </div>
 
                         <!-- Tech Stack Pills -->
                         <div class="pt-2 flex flex-wrap gap-1.5">
-                            <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-purple-700">Groq
-                                API</span>
-                            <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-indigo-700">Llama
-                                3.3</span>
-                            <span
-                                class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-blue-700">Laravel</span>
-                            <span
-                                class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-emerald-700">MySQL</span>
-                            <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-amber-700">Tailwind
-                                CSS</span>
-                            <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-slate-700">23 Diagram
-                                UML</span>
+                            <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-purple-700">Groq Cloud API</span>
+                            <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-indigo-700">Llama 3.3 70B</span>
+                            <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-blue-700">Laravel 11</span>
+                            <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-rose-700">PHP BCMath Engine</span>
+                            <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-emerald-700">MySQL (11 Entities)</span>
+                            <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-amber-700">Tailwind CSS</span>
+                            <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-slate-700">39 Black Box Tests</span>
+                            <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-cyan-700">23 Diagram UML</span>
                         </div>
 
                         <!-- Action Link: LMS GitHub & Dokumen Portofolio TA -->
                         <div class="pt-2 flex flex-wrap gap-3">
                             <a href="assets/docs/PORTOFOLIO_TUGAS_AKHIR_LMS.pdf" target="_blank"
-                                class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold shadow-sm transition-all">
-                                <i data-lucide="file-text" class="w-4 h-4"></i>
-                                <span>Dokumen Portofolio Tugas Akhir (PDF 25 Hal)</span>
+                                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold shadow-md shadow-purple-600/30 transition-all">
+                                <i data-lucide="presentation" class="w-4 h-4"></i>
+                                <span>Buka Dokumen Portofolio Tugas Akhir (PDF 25 Hal)</span>
                             </a>
                             <a href="https://github.com/alllfatihh/LMS" target="_blank"
-                                class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold border border-slate-200 transition-all">
+                                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold border border-slate-200 transition-all">
                                 <i data-lucide="github" class="w-4 h-4"></i>
                                 <span>Repository GitHub LMS</span>
                             </a>
@@ -940,80 +937,122 @@
 
                     </div>
 
-                    <!-- Right: Real Screenshot Gallery -->
+                    <!-- Right: Real Screenshot Gallery from TA Portfolio -->
                     <div class="lg:col-span-6 space-y-4">
                         <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3">
                             <div
                                 class="flex items-center justify-between text-xs font-semibold text-slate-700 pb-2 border-b border-slate-200">
                                 <span class="flex items-center gap-1.5 text-purple-700 font-bold">
-                                    <i data-lucide="camera" class="w-4 h-4"></i> Dokumentasi Nyata Platform AI LMS
+                                    <i data-lucide="camera" class="w-4 h-4"></i> Dokumentasi Asli Tugas Akhir & Antarmuka Sistem
                                 </span>
-                                <span class="text-purple-600 font-medium text-[11px]">Klik gambar untuk
-                                    memperbesar</span>
+                                <span class="text-purple-600 font-medium text-[11px]">Klik gambar untuk memperbesar</span>
                             </div>
 
-                            <!-- Featured Screenshot: Landing Page -->
+                            <!-- Featured Screenshot: Cover Tugas Akhir & Arsitektur -->
                             <div class="proof-thumbnail aspect-video shadow-sm"
-                                onclick="openModal('assets/projects/lms/01_Landing_Page.png', 'Landing Page Platform AI Matematika SMP', 'Halaman beranda platform latihan soal dinamis menyajikan kurikulum Matematika SMP, registrasi akun, dan akses kelas.', 'Landing Page LMS')">
-                                <img src="assets/projects/lms/01_Landing_Page.png" alt="LMS Landing Page"
+                                onclick="openModal('assets/projects/lms/00_cover_ta.png', 'Dokumen Tugas Akhir — Pengembangan Soal Latihan Dinamis Matematika SMP Berbasis Web', 'Dokumen resmi presentasi Tugas Akhir Muhammad Zaid Alfatih (NIM 607012330007), Program Studi D3 Sistem Informasi, Fakultas Ilmu Terapan, Universitas Telkom.', 'Tugas Akhir Telkom University')">
+                                <img src="assets/projects/lms/00_cover_ta.png" alt="Cover Tugas Akhir Muhammad Zaid Alfatih"
                                     class="w-full h-full object-cover" />
                                 <div class="zoom-overlay">
-                                    <i data-lucide="zoom-in" class="w-5 h-5"></i> Perbesar Halaman Beranda
+                                    <i data-lucide="zoom-in" class="w-5 h-5"></i> Perbesar Dokumen Presentasi TA
                                 </div>
                             </div>
 
-                            <!-- 4 Sub Thumbnails Grid -->
-                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                            <!-- 6 Sub Thumbnails Grid: Diagrams & Real App UI -->
+                            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
 
-                                <!-- Thumb 1: Dashboard Guru -->
+                                <!-- Thumb 1: Arsitektur Client-Server & Math Engine -->
                                 <div class="proof-thumbnail aspect-[4/3]"
-                                    onclick="openModal('assets/projects/lms/04_Guru_Dashboard.png', 'Dashboard Guru & Manajemen Kelas', 'Panel utama guru untuk mengelola daftar kelas, silabus materi BAB, jumlah siswa aktif, dan rekapitulasi ujian.', 'Dashboard Guru')">
+                                    onclick="openModal('assets/projects/lms/12_arsitektur_sistem.png', 'Arsitektur Sistem Client-Server & Math Engine', 'Diagram arsitektur sistem client-server yang menghubungkan web browser Guru & Siswa, framework Laravel, Math Engine BCMath, database MySQL, dan layanan AI Groq Cloud API.', 'Arsitektur Sistem')">
+                                    <img src="assets/projects/lms/12_arsitektur_sistem.png" alt="Arsitektur Sistem"
+                                        class="w-full h-full object-cover" />
+                                    <div class="zoom-overlay text-[10px]">
+                                        <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Arsitektur
+                                    </div>
+                                </div>
+
+                                <!-- Thumb 2: Class Diagram 11 Model + 1 Service -->
+                                <div class="proof-thumbnail aspect-[4/3]"
+                                    onclick="openModal('assets/projects/lms/13_class_diagram.png', 'Class Diagram: 11 Model + 1 Service Domain', 'Perancangan pemisahan struktur data dan logika bisnis melalui EvaluasiSoalService yang menangani pengacakan variabel, parsing template rumus, dan komparasi presisi BCMath.', 'Class Diagram')">
+                                    <img src="assets/projects/lms/13_class_diagram.png" alt="Class Diagram"
+                                        class="w-full h-full object-cover" />
+                                    <div class="zoom-overlay text-[10px]">
+                                        <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Class Diagram
+                                    </div>
+                                </div>
+
+                                <!-- Thumb 3: ERD 11 Entitas Data -->
+                                <div class="proof-thumbnail aspect-[4/3]"
+                                    onclick="openModal('assets/projects/lms/21_erd_diagram.png', 'Entity Relationship Diagram (ERD) 11 Entitas', 'Struktur basis data relasional MySQL pendukung soal dinamis: relasi M:N Kelas-User, JSON variable_rules pada entitas SOAL, dan penguncian kombinasi angka per sesi pada entitas JAWABAN.', 'ERD Diagram')">
+                                    <img src="assets/projects/lms/21_erd_diagram.png" alt="ERD Diagram"
+                                        class="w-full h-full object-cover" />
+                                    <div class="zoom-overlay text-[10px]">
+                                        <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> ERD (11 Entitas)
+                                    </div>
+                                </div>
+
+                                <!-- Thumb 4: Generator Pembuatan Soal Guru -->
+                                <div class="proof-thumbnail aspect-[4/3]"
+                                    onclick="openModal('assets/projects/lms/13_Guru_Buat_Soal.png', 'Antarmuka Guru: Pembuatan Template Soal Dinamis & Generator AI', 'Formulir input guru untuk menentukan teks pertanyaan dengan variabel dinamis, formula jawaban matematika, serta tombol bantuan Groq AI untuk inspirasi draf soal.', 'Buat Soal Dinamis')">
+                                    <img src="assets/projects/lms/13_Guru_Buat_Soal.png" alt="Pembuatan Soal Guru"
+                                        class="w-full h-full object-cover" />
+                                    <div class="zoom-overlay text-[10px]">
+                                        <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Form Soal Guru
+                                    </div>
+                                </div>
+
+                                <!-- Thumb 5: Dashboard Guru & Rekapitulasi Kelas -->
+                                <div class="proof-thumbnail aspect-[4/3]"
+                                    onclick="openModal('assets/projects/lms/04_Guru_Dashboard.png', 'Dashboard Guru & Manajemen Kelas', 'Pusat komando guru untuk mengontrol daftar kelas, kode akses siswa, silabus materi BAB (teks, PDF, video YouTube), dan status keaktifan kuis.', 'Dashboard Guru')">
                                     <img src="assets/projects/lms/04_Guru_Dashboard.png" alt="Dashboard Guru"
                                         class="w-full h-full object-cover" />
                                     <div class="zoom-overlay text-[10px]">
-                                        <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Guru Dashboard
+                                        <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Dasbor Guru
                                     </div>
                                 </div>
 
-                                <!-- Thumb 2: Pembuatan Soal AI -->
+                                <!-- Thumb 6: Audit Ujian & Evaluasi Siswa -->
                                 <div class="proof-thumbnail aspect-[4/3]"
-                                    onclick="openModal('assets/projects/lms/13_Guru_Buat_Soal.png', 'Generator Pembuatan Soal AI Groq', 'Formulir cerdas bagi guru untuk menginstruksikan LLM Llama 3.3 menghasilkan ragam soal latihan matematika baru secara instan.', 'AI Question Generator')">
-                                    <img src="assets/projects/lms/13_Guru_Buat_Soal.png" alt="AI Generator Soal"
+                                    onclick="openModal('assets/projects/lms/15_Guru_Audit_Ujian.png', 'Audit Ujian Siswa & Analisis Transparan', 'Tabel rekapitulasi audit guru yang menampilkan variabel angka spesifik tiap siswa, jawaban input siswa, kunci jawaban hasil perhitungan BCMath, dan waktu penyelesaian.', 'Audit Nilai Siswa')">
+                                    <img src="assets/projects/lms/15_Guru_Audit_Ujian.png" alt="Audit Ujian Siswa"
                                         class="w-full h-full object-cover" />
                                     <div class="zoom-overlay text-[10px]">
-                                        <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Generator AI
-                                    </div>
-                                </div>
-
-                                <!-- Thumb 3: Audit Ujian -->
-                                <div class="proof-thumbnail aspect-[4/3]"
-                                    onclick="openModal('assets/projects/lms/15_Guru_Audit_Ujian.png', 'Audit Ujian & Evaluasi Siswa', 'Tabel evaluasi dan analisis mendalam mengenai performa setiap siswa dalam menyelesaikan kuis matematika.', 'Exam Audit')">
-                                    <img src="assets/projects/lms/15_Guru_Audit_Ujian.png" alt="Audit Ujian"
-                                        class="w-full h-full object-cover" />
-                                    <div class="zoom-overlay text-[10px]">
-                                        <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Audit Ujian
-                                    </div>
-                                </div>
-
-                                <!-- Thumb 4: Sequence Diagram Evaluasi -->
-                                <div class="proof-thumbnail aspect-[4/3]"
-                                    onclick="openModal('assets/projects/magang/p23_Im7.png', 'Sequence Diagram Evaluasi Mesin AI', 'Pemodelan arsitektur sequence diagram alur logika mesin evaluasi ujian otomatis yang menghubungkan Controller, Service, dan AI Engine.', 'Software Architecture')">
-                                    <img src="assets/projects/magang/p23_Im7.png" alt="Sequence Diagram"
-                                        class="w-full h-full object-cover" />
-                                    <div class="zoom-overlay text-[10px]">
-                                        <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Diagram UML
+                                        <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Audit Nilai
                                     </div>
                                 </div>
 
                             </div>
 
-                            <!-- Student Exam Interface Banner -->
+                            <!-- Banner 1: Perbandingan Aplikasi Sejenis (Research Gap) -->
                             <div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-between text-xs cursor-pointer hover:border-purple-400 transition-all"
-                                onclick="openModal('assets/projects/lms/20_Siswa_Ujian.png', 'Lembar Kerja Ujian Interaktif Siswa', 'Antarmuka pengerjaan kuis matematika dinamis bagi siswa dengan timer interaktif, penomoran soal otomatis, dan navigasi ramah pengguna.', 'Student Quiz UI')">
+                                onclick="openModal('assets/projects/lms/07_perbandingan_aplikasi.png', 'Matriks Perbandingan Sistem Usulan vs Moodle / Quizizz / Google Classroom', 'Analisis fitur komparatif membuktikan keunggulan sistem usulan Tugas Akhir dalam menyediakan pengacakan nilai variabel di dalam soal, auto-grading numerik presisi tinggi, dan umpan balik rumus instan yang tidak dimiliki platform sejenis.', 'Research Gap Analysis')">
                                 <div class="flex items-center gap-2">
-                                    <i data-lucide="clipboard-check" class="w-4 h-4 text-purple-600"></i>
-                                    <span class="font-semibold text-slate-800">Lihat Antarmuka Pengerjaan Kuis
-                                        Interaktif Siswa</span>
+                                    <i data-lucide="bar-chart-2" class="w-4 h-4 text-purple-600"></i>
+                                    <span class="font-semibold text-slate-800">Lihat Matriks Perbandingan Sistem vs Moodle, Quizizz & Google Classroom</span>
+                                </div>
+                                <span class="text-purple-600 font-bold flex items-center gap-1">
+                                    Buka <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                                </span>
+                            </div>
+
+                            <!-- Banner 2: Antarmuka Ujian Siswa (Zero Cheating) -->
+                            <div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-between text-xs cursor-pointer hover:border-purple-400 transition-all"
+                                onclick="openModal('assets/projects/lms/20_Siswa_Ujian.png', 'Lembar Kerja Ujian Interaktif Siswa (Angka Acak Unik)', 'Antarmuka pengerjaan kuis siswa dengan timer interaktif, penomoran soal dinamis, dan kombinasi angka unik yang terkunci otomatis (anti-curang & anti-refresh).', 'Student Quiz UI')">
+                                <div class="flex items-center gap-2">
+                                    <i data-lucide="clipboard-check" class="w-4 h-4 text-indigo-600"></i>
+                                    <span class="font-semibold text-slate-800">Lihat Lembar Kerja Ujian Interaktif Siswa (Angka Unik & Auto-Feedback)</span>
+                                </div>
+                                <span class="text-purple-600 font-bold flex items-center gap-1">
+                                    Buka <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                                </span>
+                            </div>
+
+                            <!-- Banner 3: Rekapitulasi 39 Skenario Pengujian Black Box -->
+                            <div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-between text-xs cursor-pointer hover:border-purple-400 transition-all"
+                                onclick="openModal('assets/projects/lms/17_pengujian_blackbox.png', 'Rekapitulasi 39 Skenario Pengujian Fungsional (Black Box Testing)', 'Hasil pengujian komprehensif 39 skenario fungsional mencakup autentikasi, manajemen kelas, pengelolaan soal dinamis, integrasi asisten AI Groq, dan aktivitas kuis siswa dengan tingkat keberhasilan 100%.', 'Black Box Testing 39 Cases')">
+                                <div class="flex items-center gap-2">
+                                    <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+                                    <span class="font-semibold text-slate-800">Lihat Rekapitulasi 39 Skenario Pengujian Black Box Testing (100% Valid)</span>
                                 </div>
                                 <span class="text-purple-600 font-bold flex items-center gap-1">
                                     Buka <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
