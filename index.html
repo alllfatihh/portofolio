@@ -820,6 +820,12 @@
                             <i data-lucide="graduation-cap" class="w-4 h-4 text-purple-600"></i>
                             Tugas Akhir Resmi D3 Sistem Informasi · Telkom University
                         </span>
+                        <a href="https://lms-production-dc78.up.railway.app/" target="_blank"
+                            class="px-3 py-1 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-bold flex items-center gap-1.5 transition-colors shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            Live App: Railway
+                            <i data-lucide="external-link" class="w-3 h-3 text-emerald-600"></i>
+                        </a>
                         <span
                             class="px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold flex items-center gap-1.5">
                             <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
@@ -912,12 +918,19 @@
                             <span class="tech-pill px-2.5 py-1 rounded text-xs font-semibold text-cyan-700">23 Diagram UML</span>
                         </div>
 
-                        <!-- Action Link: LMS GitHub & Dokumen Portofolio TA -->
+                        <!-- Action Link: LMS Live Railway, Dokumen Portofolio TA, & GitHub -->
                         <div class="pt-2 flex flex-wrap gap-3">
+                            <a href="https://lms-production-dc78.up.railway.app/" target="_blank"
+                                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md shadow-emerald-600/30 transition-all">
+                                <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                                <i data-lucide="globe" class="w-4 h-4"></i>
+                                <span>Kunjungi Aplikasi Live (Railway)</span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </a>
                             <a href="assets/docs/PORTOFOLIO_TUGAS_AKHIR_LMS.pdf" target="_blank"
                                 class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold shadow-md shadow-purple-600/30 transition-all">
                                 <i data-lucide="presentation" class="w-4 h-4"></i>
-                                <span>Buka Dokumen Portofolio Tugas Akhir (PDF 25 Hal)</span>
+                                <span>Buka Dokumen Portofolio TA (PDF 25 Hal)</span>
                             </a>
                             <a href="https://github.com/alllfatihh/LMS" target="_blank"
                                 class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold border border-slate-200 transition-all">
@@ -939,76 +952,99 @@
                                 <span class="text-purple-600 font-medium text-[11px]">Klik gambar untuk memperbesar</span>
                             </div>
 
-                            <!-- Featured Screenshot: Cover Tugas Akhir & Arsitektur -->
-                            <div class="proof-thumbnail aspect-video shadow-sm"
-                                onclick="openModal('assets/projects/lms/00_cover_ta.png', 'Dokumen Tugas Akhir — Pengembangan Soal Latihan Dinamis Matematika SMP Berbasis Web', 'Dokumen resmi presentasi Tugas Akhir Muhammad Zaid Alfatih (NIM 607012330007), Program Studi D3 Sistem Informasi, Fakultas Ilmu Terapan, Universitas Telkom.', 'Tugas Akhir Telkom University')">
-                                <img src="assets/projects/lms/00_cover_ta.png" alt="Cover Tugas Akhir Muhammad Zaid Alfatih"
+                            <!-- Featured Screenshot: Live Production di Railway -->
+                            <div class="proof-thumbnail aspect-video shadow-sm relative group"
+                                onclick="openModal('assets/projects/lms/01_lms_live_homepage.png', 'LMS Matematika SMP Berbasis AI — Live Production di Railway', 'Tampilan antarmuka beranda resmi aplikasi live yang telah berhasil di-deploy ke Railway Cloud (https://lms-production-dc78.up.railway.app/). Dilengkapi portal autentikasi terisolasi untuk Guru dan Siswa, manajemen materi, kuis dinamis berumus, dan asisten pembuat soal AI Llama 3.3 70B.', 'Live Production Railway')">
+                                <img src="assets/projects/lms/01_lms_live_homepage.png" alt="Live LMS Homepage di Railway"
                                     class="w-full h-full object-cover" />
+                                <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-600/90 text-white text-[10px] font-bold tracking-wide flex items-center gap-1.5 shadow backdrop-blur-sm pointer-events-none">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> Live on Railway
+                                </div>
                                 <div class="zoom-overlay">
-                                    <i data-lucide="zoom-in" class="w-5 h-5"></i> Perbesar Dokumen Presentasi TA
+                                    <i data-lucide="zoom-in" class="w-5 h-5"></i> Perbesar Tampilan Live Production (Railway)
                                 </div>
                             </div>
 
-                            <!-- 6 Sub Thumbnails Grid: Diagrams & Real App UI -->
-                            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+                            <!-- 8 Sub Thumbnails Grid: Diagrams & Real App UI -->
+                            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2">
 
-                                <!-- Thumb 1: Arsitektur Client-Server & Math Engine -->
+                                <!-- Thumb 1: Cover Dokumen TA -->
+                                <div class="proof-thumbnail aspect-[4/3]"
+                                    onclick="openModal('assets/projects/lms/00_cover_ta.png', 'Dokumen Tugas Akhir — Pengembangan Soal Latihan Dinamis Matematika SMP Berbasis Web', 'Dokumen resmi presentasi Tugas Akhir Muhammad Zaid Alfatih (NIM 607012330007), Program Studi D3 Sistem Informasi, Fakultas Ilmu Terapan, Universitas Telkom.', 'Tugas Akhir Telkom University')">
+                                    <img src="assets/projects/lms/00_cover_ta.png" alt="Cover Dokumen TA"
+                                        class="w-full h-full object-cover" />
+                                    <div class="zoom-overlay text-[9px]">
+                                        <i data-lucide="zoom-in" class="w-3 h-3"></i> Dokumen TA
+                                    </div>
+                                </div>
+
+                                <!-- Thumb 2: Live Login Page -->
+                                <div class="proof-thumbnail aspect-[4/3]"
+                                    onclick="openModal('assets/projects/lms/02_lms_live_login.png', 'Halaman Login Multi-Role (Guru & Siswa) Live di Railway', 'Antarmuka masuk sistem live dengan pembagian hak akses terisolasi (RBAC) antara akun guru dan akun siswa.', 'Live Login Page')">
+                                    <img src="assets/projects/lms/02_lms_live_login.png" alt="Live Login Page"
+                                        class="w-full h-full object-cover" />
+                                    <div class="zoom-overlay text-[9px]">
+                                        <i data-lucide="zoom-in" class="w-3 h-3"></i> Login Live
+                                    </div>
+                                </div>
+
+                                <!-- Thumb 3: Arsitektur Client-Server & Math Engine -->
                                 <div class="proof-thumbnail aspect-[4/3]"
                                     onclick="openModal('assets/projects/lms/12_arsitektur_sistem.png', 'Arsitektur Sistem Client-Server & Math Engine', 'Diagram arsitektur sistem client-server yang menghubungkan web browser Guru & Siswa, framework Laravel, Math Engine BCMath, database MySQL, dan layanan AI Groq Cloud API.', 'Arsitektur Sistem')">
                                     <img src="assets/projects/lms/12_arsitektur_sistem.png" alt="Arsitektur Sistem"
                                         class="w-full h-full object-cover" />
-                                    <div class="zoom-overlay text-[10px]">
-                                        <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Arsitektur
+                                    <div class="zoom-overlay text-[9px]">
+                                        <i data-lucide="zoom-in" class="w-3 h-3"></i> Arsitektur
                                     </div>
                                 </div>
 
-                                <!-- Thumb 2: Class Diagram 11 Model + 1 Service -->
+                                <!-- Thumb 4: Class Diagram 11 Model + 1 Service -->
                                 <div class="proof-thumbnail aspect-[4/3]"
                                     onclick="openModal('assets/projects/lms/13_class_diagram.png', 'Class Diagram: 11 Model + 1 Service Domain', 'Perancangan pemisahan struktur data dan logika bisnis melalui EvaluasiSoalService yang menangani pengacakan variabel, parsing template rumus, dan komparasi presisi BCMath.', 'Class Diagram')">
                                     <img src="assets/projects/lms/13_class_diagram.png" alt="Class Diagram"
                                         class="w-full h-full object-cover" />
-                                    <div class="zoom-overlay text-[10px]">
-                                        <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Class Diagram
+                                    <div class="zoom-overlay text-[9px]">
+                                        <i data-lucide="zoom-in" class="w-3 h-3"></i> Class Diag
                                     </div>
                                 </div>
 
-                                <!-- Thumb 3: ERD 11 Entitas Data -->
+                                <!-- Thumb 5: ERD 11 Entitas Data -->
                                 <div class="proof-thumbnail aspect-[4/3]"
                                     onclick="openModal('assets/projects/lms/21_erd_diagram.png', 'Entity Relationship Diagram (ERD) 11 Entitas', 'Struktur basis data relasional MySQL pendukung soal dinamis: relasi M:N Kelas-User, JSON variable_rules pada entitas SOAL, dan penguncian kombinasi angka per sesi pada entitas JAWABAN.', 'ERD Diagram')">
                                     <img src="assets/projects/lms/21_erd_diagram.png" alt="ERD Diagram"
                                         class="w-full h-full object-cover" />
-                                    <div class="zoom-overlay text-[10px]">
-                                        <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> ERD (11 Entitas)
+                                    <div class="zoom-overlay text-[9px]">
+                                        <i data-lucide="zoom-in" class="w-3 h-3"></i> ERD (11)
                                     </div>
                                 </div>
 
-                                <!-- Thumb 4: Generator Pembuatan Soal Guru -->
+                                <!-- Thumb 6: Generator Pembuatan Soal Guru -->
                                 <div class="proof-thumbnail aspect-[4/3]"
                                     onclick="openModal('assets/projects/lms/13_Guru_Buat_Soal.png', 'Antarmuka Guru: Pembuatan Template Soal Dinamis & Generator AI', 'Formulir input guru untuk menentukan teks pertanyaan dengan variabel dinamis, formula jawaban matematika, serta tombol bantuan Groq AI untuk inspirasi draf soal.', 'Buat Soal Dinamis')">
                                     <img src="assets/projects/lms/13_Guru_Buat_Soal.png" alt="Pembuatan Soal Guru"
                                         class="w-full h-full object-cover" />
-                                    <div class="zoom-overlay text-[10px]">
-                                        <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Form Soal Guru
+                                    <div class="zoom-overlay text-[9px]">
+                                        <i data-lucide="zoom-in" class="w-3 h-3"></i> Form Guru
                                     </div>
                                 </div>
 
-                                <!-- Thumb 5: Dashboard Guru & Rekapitulasi Kelas -->
+                                <!-- Thumb 7: Dashboard Guru & Rekapitulasi Kelas -->
                                 <div class="proof-thumbnail aspect-[4/3]"
                                     onclick="openModal('assets/projects/lms/04_Guru_Dashboard.png', 'Dashboard Guru & Manajemen Kelas', 'Pusat komando guru untuk mengontrol daftar kelas, kode akses siswa, silabus materi BAB (teks, PDF, video YouTube), dan status keaktifan kuis.', 'Dashboard Guru')">
                                     <img src="assets/projects/lms/04_Guru_Dashboard.png" alt="Dashboard Guru"
                                         class="w-full h-full object-cover" />
-                                    <div class="zoom-overlay text-[10px]">
-                                        <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Dasbor Guru
+                                    <div class="zoom-overlay text-[9px]">
+                                        <i data-lucide="zoom-in" class="w-3 h-3"></i> Dasbor
                                     </div>
                                 </div>
 
-                                <!-- Thumb 6: Audit Ujian & Evaluasi Siswa -->
+                                <!-- Thumb 8: Audit Ujian & Evaluasi Siswa -->
                                 <div class="proof-thumbnail aspect-[4/3]"
                                     onclick="openModal('assets/projects/lms/15_Guru_Audit_Ujian.png', 'Audit Ujian Siswa & Analisis Transparan', 'Tabel rekapitulasi audit guru yang menampilkan variabel angka spesifik tiap siswa, jawaban input siswa, kunci jawaban hasil perhitungan BCMath, dan waktu penyelesaian.', 'Audit Nilai Siswa')">
                                     <img src="assets/projects/lms/15_Guru_Audit_Ujian.png" alt="Audit Ujian Siswa"
                                         class="w-full h-full object-cover" />
-                                    <div class="zoom-overlay text-[10px]">
-                                        <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i> Audit Nilai
+                                    <div class="zoom-overlay text-[9px]">
+                                        <i data-lucide="zoom-in" class="w-3 h-3"></i> Audit Nilai
                                     </div>
                                 </div>
 
@@ -1520,19 +1556,26 @@
                         </div>
                         <div>
                             <span class="text-[10px] font-bold text-purple-600 uppercase tracking-wider block">Tugas
-                                Akhir · 25 Halaman</span>
+                                Akhir · 25 Halaman · Live</span>
                             <h4 class="font-bold text-slate-900 text-sm mt-0.5">Portofolio Tugas Akhir LMS</h4>
                         </div>
                         <p class="text-xs text-slate-500 leading-relaxed">
-                            Slide dokumentasi resmi 25 halaman Tugas Akhir: Pengembangan Soal Latihan Dinamis Matematika
-                            SMP Berbasis Web dengan integrasi AI.
+                            Dokumentasi resmi 25 halaman Tugas Akhir: Pengembangan Soal Latihan Dinamis Matematika
+                            SMP Berbasis Web dengan AI Llama 3.3 & BCMath Engine. Telah aktif live di Railway.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-slate-100">
+                    <div class="pt-4 border-t border-slate-100 space-y-2">
+                        <a href="https://lms-production-dc78.up.railway.app/" target="_blank"
+                            class="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-sm transition-all">
+                            <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                            <i data-lucide="globe" class="w-4 h-4"></i>
+                            <span>Kunjungi Web Live (Railway)</span>
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
                         <a href="assets/docs/PORTOFOLIO_TUGAS_AKHIR_LMS.pdf" target="_blank"
                             class="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-sm transition-all">
                             <i data-lucide="external-link" class="w-4 h-4"></i>
-                            <span>Buka Dokumen TA (PDF)</span>
+                            <span>Buka Dokumen TA (PDF 25 Hal)</span>
                         </a>
                     </div>
                 </div>
@@ -1667,7 +1710,7 @@
                                 <strong>EasyOCR</strong> mengekstrak angka, dan halaman web menampilkan hasil pemantauan
                                 <em>real-time</em>.</li>
                             <li>Mengembangkan platform web soal latihan matematika SMP dinamis terintegrasi <strong>Groq
-                                    API (Llama 3.3)</strong>.</li>
+                                    API (Llama 3.3)</strong> dan mesin presisi <strong>PHP BCMath</strong> — <a href="https://lms-production-dc78.up.railway.app/" target="_blank" class="text-emerald-600 font-bold hover:underline inline-flex items-center gap-1">Live di Railway <i data-lucide="external-link" class="w-3 h-3"></i></a>.</li>
                             <li>Merancang arsitektur sistem dengan <strong>23 diagram UML</strong> (use case, activity,
                                 sequence, BPMN, ERD, class diagram) dan menyusun laporan evaluasi bulanan.</li>
                         </ul>
